@@ -1,9 +1,9 @@
-package app.delivery.core.shared_kernel;
+package app.delivery.core.shared.kernel;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static app.delivery.core.shared_kernel.Weight.MINIMUM_WEIGHT;
+import static app.delivery.core.shared.kernel.Weight.MINIMUM_WEIGHT;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WeightTest {
@@ -16,7 +16,7 @@ public class WeightTest {
             Weight weight = new Weight(10);
             assertAll(
                     () -> assertNotNull(weight),
-                    () -> assertEquals(10, weight.getKilograms())
+                    () -> assertEquals(10, weight.kg())
             );
         }
 
@@ -42,7 +42,7 @@ public class WeightTest {
 
         @Test
         void givenSameWeights_thenAssertEqual() {
-            Weight weight2 = new Weight(weight1.getKilograms());
+            Weight weight2 = new Weight(weight1.kg());
             assertEquals(weight1, weight2);
         }
 

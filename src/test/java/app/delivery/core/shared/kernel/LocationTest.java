@@ -1,9 +1,9 @@
-package app.delivery.core.shared_kernel;
+package app.delivery.core.shared.kernel;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static app.delivery.core.shared_kernel.Location.MINIMUM_COORDINATE;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LocationTest {
@@ -17,18 +17,18 @@ public class LocationTest {
 
         @Test
         void givenValidCoordinate_thenSuccessfullyCompleted() {
-            Location location = new Location(MINIMUM_COORDINATE, MINIMUM_COORDINATE);
+            Location location = new Location(Location.MINIMUM_COORDINATE, Location.MINIMUM_COORDINATE);
             assertAll(
                     () -> assertNotNull(location),
-                    () -> assertEquals(MINIMUM_COORDINATE, location.getXCoordinate()),
-                    () -> assertEquals(MINIMUM_COORDINATE, location.getYCoordinate())
+                    () -> Assertions.assertEquals(Location.MINIMUM_COORDINATE, location.xCoordinate()),
+                    () -> Assertions.assertEquals(Location.MINIMUM_COORDINATE, location.yCoordinate())
             );
         }
 
         @Test
         void givenBelowMinimumXCoordinate_thenThrowException() {
             IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-                new Location(BELLOW_MIN_COORDINATE, MINIMUM_COORDINATE);
+                new Location(BELLOW_MIN_COORDINATE, Location.MINIMUM_COORDINATE);
             });
             assertEquals("xCoordinate: %s is out of bounds".formatted(BELLOW_MIN_COORDINATE), exception.getMessage());
         }
@@ -36,7 +36,7 @@ public class LocationTest {
         @Test
         void givenBelowMinimumYCoordinate_thenThrowException() {
             IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-                new Location(MINIMUM_COORDINATE, BELLOW_MIN_COORDINATE);
+                new Location(Location.MINIMUM_COORDINATE, BELLOW_MIN_COORDINATE);
             });
             assertEquals("yCoordinate: %s is out of bounds".formatted(BELLOW_MIN_COORDINATE), exception.getMessage());
         }
@@ -44,7 +44,7 @@ public class LocationTest {
         @Test
         void givenAboveMaximumXCoordinate_thenThrowException() {
             IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-                new Location(ABOVE_MAX_VALID_COORDINATE, MINIMUM_COORDINATE);
+                new Location(ABOVE_MAX_VALID_COORDINATE, Location.MINIMUM_COORDINATE);
             });
             assertEquals("xCoordinate: %s is out of bounds".formatted(ABOVE_MAX_VALID_COORDINATE), exception.getMessage());
         }
@@ -52,7 +52,7 @@ public class LocationTest {
         @Test
         void givenAboveMaximumYCoordinate_thenThrowException() {
             IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-                new Location(MINIMUM_COORDINATE, ABOVE_MAX_VALID_COORDINATE);
+                new Location(Location.MINIMUM_COORDINATE, ABOVE_MAX_VALID_COORDINATE);
             });
             assertEquals("yCoordinate: %s is out of bounds".formatted(ABOVE_MAX_VALID_COORDINATE), exception.getMessage());
         }
@@ -65,7 +65,7 @@ public class LocationTest {
         @Test
         void givenValidDistance_thenSuccessfullyCompleted() {
             int expectedDistance = 8; //5-1 + 5-1
-            Location location1 = new Location(MINIMUM_COORDINATE, MINIMUM_COORDINATE);
+            Location location1 = new Location(Location.MINIMUM_COORDINATE, Location.MINIMUM_COORDINATE);
             Location location2 = new Location(VALID_COORDINATE_FIVE, VALID_COORDINATE_FIVE);
 
             int distance = location1.calculateDistance(location2);
@@ -76,11 +76,11 @@ public class LocationTest {
     @Nested
     class Equals {
 
-        Location location1 = new Location(MINIMUM_COORDINATE, MINIMUM_COORDINATE);
+        Location location1 = new Location(Location.MINIMUM_COORDINATE, Location.MINIMUM_COORDINATE);
 
         @Test
         void givenSameCoordinates_thenAssertEqual() {
-            Location location2 = new Location(location1.getXCoordinate(), location1.getYCoordinate());
+            Location location2 = new Location(location1.xCoordinate(), location1.yCoordinate());
             assertEquals(location1, location2);
         }
 

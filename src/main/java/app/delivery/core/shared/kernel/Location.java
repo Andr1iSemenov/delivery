@@ -1,4 +1,4 @@
-package app.delivery.core.shared_kernel;
+package app.delivery.core.shared.kernel;
 
 import java.util.Objects;
 
@@ -17,18 +17,10 @@ public record Location(int xCoordinate, int yCoordinate) {
         }
     }
 
-    public int getXCoordinate() {
-        return xCoordinate;
-    }
-
-    public int getYCoordinate() {
-        return yCoordinate;
-    }
-
     public int calculateDistance(Location toDistance) {
         Objects.requireNonNull(toDistance);
-        int distanceToX = Math.abs(getXCoordinate() - toDistance.getXCoordinate());
-        int distanceToY = Math.abs(getYCoordinate() - toDistance.getYCoordinate());
+        int distanceToX = Math.abs(xCoordinate - toDistance.xCoordinate);
+        int distanceToY = Math.abs(yCoordinate - toDistance.yCoordinate);
         return distanceToX + distanceToY;
     }
 
