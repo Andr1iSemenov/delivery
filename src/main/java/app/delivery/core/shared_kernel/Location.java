@@ -2,43 +2,33 @@ package app.delivery.core.shared_kernel;
 
 import java.util.Objects;
 
-public class Location {
+public record Location(int xCoordinate, int yCoordinate) {
 
-    private static final double MINIMUM_COORDINATE = 1.1;
-    private static final double MAXIMUM_COORDINATE = 10.10;
-
-    private final double xCoordinate;
-    private final double yCoordinate;
+    public static final int MINIMUM_COORDINATE = 1;
+    public static final int MAXIMUM_COORDINATE = 10;
 
 
-    private Location(double xCoordinate, double yCoordinate) {
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
+    public Location {
+        if (xCoordinate < MINIMUM_COORDINATE || xCoordinate > MAXIMUM_COORDINATE) {
+            throw new IllegalArgumentException("xCoordinate: %s is out of bounds".formatted(xCoordinate));
+        }
+        if (yCoordinate < MINIMUM_COORDINATE || yCoordinate > MAXIMUM_COORDINATE) {
+            throw new IllegalArgumentException("yCoordinate: %s is out of bounds".formatted(yCoordinate));
+        }
     }
 
-    public double getXCoordinate() {
+    public int getXCoordinate() {
         return xCoordinate;
     }
 
-    public double getYCoordinate() {
+    public int getYCoordinate() {
         return yCoordinate;
     }
 
-    public static Location create(double xCoordinate, double yCoordinate) {
-        if (xCoordinate < MINIMUM_COORDINATE || xCoordinate > MAXIMUM_COORDINATE) {
-            throw new IllegalArgumentException("xCoordinate is out of bounds");
-        }
-        if (yCoordinate < MINIMUM_COORDINATE || yCoordinate > MAXIMUM_COORDINATE) {
-            throw new IllegalArgumentException("yCoordinate is out of bounds");
-        }
-
-        return new Location(xCoordinate, yCoordinate);
-    }
-
-    public double calculateDistance(Location toDistance) {
+    public int calculateDistance(Location toDistance) {
         Objects.requireNonNull(toDistance);
-        double distanceToX = Math.abs(getXCoordinate() - toDistance.getXCoordinate());
-        double distanceToY = Math.abs(getYCoordinate() - toDistance.getYCoordinate());
+        int distanceToX = Math.abs(getXCoordinate() - toDistance.getXCoordinate());
+        int distanceToY = Math.abs(getYCoordinate() - toDistance.getYCoordinate());
         return distanceToX + distanceToY;
     }
 
@@ -46,7 +36,7 @@ public class Location {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Location location)) return false;
-        return Double.compare(xCoordinate, location.xCoordinate) == 0 && Double.compare(yCoordinate, location.yCoordinate) == 0;
+        return xCoordinate == location.xCoordinate && yCoordinate == location.yCoordinate;
     }
 
     @Override
