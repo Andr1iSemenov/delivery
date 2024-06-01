@@ -2,22 +2,15 @@ package app.delivery.core.shared_kernel;
 
 import java.util.Objects;
 
-public class Weight {
+public record Weight(double kg) implements Comparable<Weight> {
 
-    private static final double MINIMUM_WEIGHT = 0;
+    public static final double MINIMUM_WEIGHT = 0;
 
-    private final double kg;
 
-    private Weight(double kg) {
-        this.kg = kg;
-    }
-
-    public static Weight create(double kg) {
+    public Weight {
         if (kg <= MINIMUM_WEIGHT) {
             throw new IllegalArgumentException("Weight should be greater than " + MINIMUM_WEIGHT);
         }
-
-        return new Weight(kg);
     }
 
     public double getKilograms() {
@@ -34,5 +27,10 @@ public class Weight {
     @Override
     public int hashCode() {
         return Objects.hash(kg);
+    }
+
+    @Override
+    public int compareTo(Weight o) {
+        return Double.compare(this.kg, o.kg);
     }
 }
