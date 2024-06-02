@@ -92,7 +92,7 @@ public class Courier {
         if (distanceTo <= 0) {
             return 0;
         }
-        return distanceTo / transport.getSpeed();
+        return (int) Math.ceil((double) distanceTo / transport.getSpeed());
     }
 
     private int adjustCoordinateTowardsTarget(int offset, int currentCoordinate) {
