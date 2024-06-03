@@ -2,25 +2,32 @@ package app.delivery.core.domain.order.aggregate;
 
 import app.delivery.core.shared.kernel.Location;
 import app.delivery.core.shared.kernel.Weight;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
 
+@Entity
+@Table(name = "orders")
 @Builder
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = "id")
 public class Order {
 
+    @Id
     private UUID id;
 
     private UUID courierId;
 
+    @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
+    @Embedded
     private Weight weight;
 
+    @Embedded
     private Location location;
 
 
