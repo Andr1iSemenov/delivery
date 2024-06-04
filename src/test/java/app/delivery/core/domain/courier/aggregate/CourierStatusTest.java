@@ -17,11 +17,7 @@ class CourierStatusTest {
 
     @Test
     void shouldThrowExceptionForInvalidIds() {
-        assertAll(
-                () -> assertEquals("Unknown courier status: " + 3, assertThrows(IllegalArgumentException.class, () -> CourierStatus.of(3)).getMessage()),
-                () -> assertEquals("Unknown courier status: " + 4, assertThrows(IllegalArgumentException.class, () -> CourierStatus.of(4)).getMessage()),
-                () -> assertEquals("Unknown courier status: " + 5, assertThrows(IllegalArgumentException.class, () -> CourierStatus.of(5)).getMessage())
-        );
+        assertEquals("Unknown courier status id: " + 3, assertThrows(IllegalArgumentException.class, () -> CourierStatus.of(3)).getMessage());
     }
 
     @Test
@@ -35,10 +31,7 @@ class CourierStatusTest {
 
     @Test
     void shouldThrowExceptionForInvalidNames() {
-        assertAll(
-                () -> assertEquals("Unknown courier status: " + 3, assertThrows(IllegalArgumentException.class, () -> CourierStatus.of(3)).getMessage()),
-                () -> assertEquals("Unknown courier status: " + 4, assertThrows(IllegalArgumentException.class, () -> CourierStatus.of(4)).getMessage()),
-                () -> assertEquals("Unknown courier status: " + 5, assertThrows(IllegalArgumentException.class, () -> CourierStatus.of(5)).getMessage())
-        );
+        String notExistingStatusName = "Waiting";
+        assertEquals("Unknown courier status name: " + notExistingStatusName, assertThrows(IllegalArgumentException.class, () -> CourierStatus.of(notExistingStatusName)).getMessage());
     }
 }

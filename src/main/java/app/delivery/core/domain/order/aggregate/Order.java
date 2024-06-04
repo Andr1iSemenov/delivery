@@ -40,7 +40,7 @@ public class Order {
 
     public void complete() {
         if (!OrderStatus.ASSIGNED.equals(this.status)) {
-            throw new IllegalStateException("Cannot complete order. Expected status to be ASSIGNED but was %s".formatted(this.status));
+            throw new IllegalStateException("Cannot complete order. Expected status should be ASSIGNED but was %s".formatted(this.status));
         }
         this.status = OrderStatus.COMPLETED;
     }

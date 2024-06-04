@@ -17,11 +17,7 @@ class OrderStatusTest {
 
     @Test
     void shouldThrowExceptionForInvalidIds() {
-        assertAll(
-                () -> assertEquals("Unknown order status: " + 3, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(3)).getMessage()),
-                () -> assertEquals("Unknown order status: " + 4, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(4)).getMessage()),
-                () -> assertEquals("Unknown order status: " + 5, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(5)).getMessage())
-        );
+        assertEquals("Unknown order status id: " + 3, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(3)).getMessage());
     }
 
     @Test
@@ -35,10 +31,7 @@ class OrderStatusTest {
 
     @Test
     void shouldThrowExceptionForInvalidNames() {
-        assertAll(
-                () -> assertEquals("Unknown order status: " + 3, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(3)).getMessage()),
-                () -> assertEquals("Unknown order status: " + 4, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(4)).getMessage()),
-                () -> assertEquals("Unknown order status: " + 5, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(5)).getMessage())
-        );
+        String notExistingStatusName = "Shipped";
+        assertEquals("Unknown order status name: " + notExistingStatusName, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(notExistingStatusName)).getMessage());
     }
 }

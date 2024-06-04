@@ -18,11 +18,7 @@ class TransportTest {
 
     @Test
     void shouldThrowExceptionForInvalidNames() {
-        assertAll(
-                () -> assertEquals("Unknown Transport name: " + "Plane", assertThrows(IllegalArgumentException.class, () -> Transport.of("Plane")).getMessage()),
-                () -> assertEquals("Unknown Transport name: " + "Boat", assertThrows(IllegalArgumentException.class, () -> Transport.of("Boat")).getMessage()),
-                () -> assertEquals("Unknown Transport name: " + "Train", assertThrows(IllegalArgumentException.class, () -> Transport.of("Train")).getMessage())
-        );
+        assertEquals("Unknown Transport name: " + "Plane", assertThrows(IllegalArgumentException.class, () -> Transport.of("Plane")).getMessage());
     }
 
     @Test

@@ -2,10 +2,11 @@ package app.delivery.core.domain.courier.aggregate;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.util.stream.Stream;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 public enum Transport {
 
