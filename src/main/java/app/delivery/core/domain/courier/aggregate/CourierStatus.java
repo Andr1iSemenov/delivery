@@ -22,13 +22,13 @@ public enum CourierStatus {
         return Stream.of(CourierStatus.values())
                 .filter(s -> Objects.equals(s.id, id))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Unknown courier status: " + id));
+                .orElseThrow(() -> new IllegalArgumentException("Unknown courier status id: " + id));
     }
 
     public static CourierStatus of(String name) {
         return Stream.of(CourierStatus.values())
                 .filter(s -> Objects.equals(s.name, name))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Unknown courier name: " + name));
+                .orElseThrow(() -> new IllegalArgumentException("Unknown courier status name: " + name));
     }
 }

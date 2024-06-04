@@ -22,13 +22,13 @@ public enum OrderStatus {
         return Stream.of(OrderStatus.values())
                 .filter(s -> Objects.equals(s.id, id))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Unknown order status: " + id));
+                .orElseThrow(() -> new IllegalArgumentException("Unknown order status id: " + id));
     }
 
     public static OrderStatus of(String name) {
         return Stream.of(OrderStatus.values())
                 .filter(s -> Objects.equals(s.name, name))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Unknown order name: " + name));
+                .orElseThrow(() -> new IllegalArgumentException("Unknown order status name: " + name));
     }
 }
