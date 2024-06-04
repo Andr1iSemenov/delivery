@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public record Location(int xCoordinate, int yCoordinate) {
 
+    private static final int STEP_SIZE = 1;
     public static final int MINIMUM_COORDINATE = 1;
     public static final int MAXIMUM_COORDINATE = 10;
 
@@ -22,6 +23,36 @@ public record Location(int xCoordinate, int yCoordinate) {
         int distanceToX = Math.abs(xCoordinate - toDistance.xCoordinate);
         int distanceToY = Math.abs(yCoordinate - toDistance.yCoordinate);
         return distanceToX + distanceToY;
+    }
+
+    public Location moveTowards(Location toLocation, int speed) {
+
+        int currentXCoordinate = this.xCoordinate;
+        int currentYCoordinate = this.yCoordinate;
+
+        int xOffset = currentXCoordinate - toLocation.xCoordinate();
+        int yOffset = currentYCoordinate - toLocation.yCoordinate();
+        for (int i = 0; i < speed && !reachedCoordinate(xOffset, yOffset); i++) {
+
+            if (Math.abs(xOffset) >= Math.abs(yOffset)) {
+                currentXCoordinate = adjustCoordinateTowardsTarget(xOffset, currentXCoordinate);
+            } else {
+                currentYCoordinate = adjustCoordinateTowardsTarget(yOffset, currentYCoordinate);
+            }
+
+            xOffset = currentXCoordinate - toLocation.xCoordinate();
+            yOffset = currentYCoordinate - toLocation.yCoordinate();
+        }
+
+        return new Location(currentXCoordinate, currentYCoordinate);
+    }
+
+    private int adjustCoordinateTowardsTarget(int offset, int currentCoordinate) {
+        return offset >= 0 ? currentCoordinate - STEP_SIZE : currentCoordinate + STEP_SIZE;
+    }
+
+    private boolean reachedCoordinate(int xOffset, int yOffset) {
+        return xOffset == 0 && yOffset == 0;
     }
 
     @Override
