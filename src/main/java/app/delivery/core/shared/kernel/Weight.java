@@ -1,4 +1,4 @@
-package app.delivery.core.shared_kernel;
+package app.delivery.core.shared.kernel;
 
 import java.util.Objects;
 
@@ -11,10 +11,6 @@ public record Weight(double kg) implements Comparable<Weight> {
         if (kg <= MINIMUM_WEIGHT) {
             throw new IllegalArgumentException("Weight should be greater than " + MINIMUM_WEIGHT);
         }
-    }
-
-    public double getKilograms() {
-        return kg;
     }
 
     @Override
