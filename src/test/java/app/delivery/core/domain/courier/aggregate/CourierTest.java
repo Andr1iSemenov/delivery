@@ -17,6 +17,7 @@ import java.util.stream.Stream;
 import static app.delivery.core.domain.courier.aggregate.Courier.DEFAULT_LOCATION_X;
 import static app.delivery.core.domain.courier.aggregate.Courier.DEFAULT_LOCATION_Y;
 import static app.delivery.core.shared.kernel.Location.MAXIMUM_COORDINATE;
+import static app.delivery.core.shared.kernel.Location.MINIMUM_COORDINATE;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CourierTest {
@@ -78,7 +79,7 @@ public class CourierTest {
 
         @Test
         void whenEndWorkDay_thenCourierStatusIsNotAvailable() {
-            Courier courier = Courier.create(UUID.randomUUID(), COURIER_NAME, Transport.PEDESTRIAN);
+            Courier courier = new Courier(UUID.randomUUID(), COURIER_NAME, Transport.PEDESTRIAN, new Location(MINIMUM_COORDINATE, MINIMUM_COORDINATE), CourierStatus.READY);
             courier.endWorkDay();
             assertEquals(CourierStatus.NOT_AVAILABLE, courier.getStatus());
         }
@@ -136,14 +137,18 @@ public class CourierTest {
         @ParameterizedTest
         @MethodSource("availableTransports")
         void whenOrderLocationIsReachedWithinSpeed_thenOrderCompletedAndCourierReady(Transport transport) {
-
+            // Given
             Courier courier = Courier.create(UUID.randomUUID(), COURIER_NAME, transport);
             courier.startWorkDay();
+
             Order order = Order.create(UUID.randomUUID(), new Location(DEFAULT_LOCATION_X + transport.getSpeed(), DEFAULT_LOCATION_Y), new Weight(5));
             order.assignCourier(courier.getId());
             courier.assignOrder();
+
+            // When
             courier.moveTowardsOrderLocation(order);
 
+            // Then
             assertAll(
                     () -> assertEquals(OrderStatus.COMPLETED, order.getStatus()),
                     () -> assertEquals(CourierStatus.READY, courier.getStatus())
@@ -153,14 +158,18 @@ public class CourierTest {
         @ParameterizedTest
         @MethodSource("availableTransports")
         void whenOrderLocationIsNotReached_thenOrderAssignedAndCourierIsBusy(Transport transport) {
-
+            // Given
             Courier courier = Courier.create(UUID.randomUUID(), COURIER_NAME, transport);
             courier.startWorkDay();
+
             Order order = Order.create(UUID.randomUUID(), new Location(MAXIMUM_COORDINATE, MAXIMUM_COORDINATE), new Weight(5));
             order.assignCourier(courier.getId());
             courier.assignOrder();
+
+            // When
             courier.moveTowardsOrderLocation(order);
 
+            // Then
             assertAll(
                     () -> assertEquals(OrderStatus.ASSIGNED, order.getStatus()),
                     () -> assertEquals(CourierStatus.BUSY, courier.getStatus())

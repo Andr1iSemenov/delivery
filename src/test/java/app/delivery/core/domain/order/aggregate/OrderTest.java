@@ -60,7 +60,7 @@ class OrderTest {
         @Test
         void whenCompletingUnassignedOrder_thenExceptionThrown() {
             Order order = Order.create(UUID.randomUUID(), new Location(Location.MINIMUM_COORDINATE, Location.MAXIMUM_COORDINATE), new Weight(5));
-            assertEquals("Cannot complete order. Expected status to be ASSIGNED but was %s".formatted(OrderStatus.CREATED), assertThrows(IllegalStateException.class, order::complete).getMessage());
+            assertEquals("Cannot complete order. Expected status should be ASSIGNED but was %s".formatted(OrderStatus.CREATED), assertThrows(IllegalStateException.class, order::complete).getMessage());
         }
 
         @Test
