@@ -32,6 +32,7 @@ class OrderStatusTest {
     @Test
     void shouldThrowExceptionForInvalidNames() {
         String notExistingStatusName = "Shipped";
+
         assertEquals("Unknown order status name: " + notExistingStatusName, assertThrows(IllegalArgumentException.class, () -> OrderStatus.of(notExistingStatusName)).getMessage());
     }
 }
