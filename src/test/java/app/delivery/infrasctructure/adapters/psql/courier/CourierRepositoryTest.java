@@ -4,7 +4,7 @@ import app.delivery.configs.ContainersEnvironment;
 import app.delivery.core.domain.courier.aggregate.Courier;
 import app.delivery.core.domain.courier.aggregate.CourierStatus;
 import app.delivery.core.domain.courier.aggregate.Transport;
-import app.delivery.core.ports.ICourierRepository;
+import app.delivery.core.ports.CourierRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CourierRepositoryTest extends ContainersEnvironment {
 
     @Autowired
-    ICourierRepository courierRepository;
+    CourierRepository courierRepository;
 
     @Test
     void testSaveCourier() {

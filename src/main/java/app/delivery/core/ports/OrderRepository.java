@@ -5,7 +5,7 @@ import app.delivery.core.domain.order.aggregate.Order;
 import java.util.List;
 import java.util.UUID;
 
-public interface IOrderRepository {
+public interface OrderRepository {
 
     Order save(Order order);
 

@@ -5,7 +5,7 @@ import app.delivery.core.domain.courier.aggregate.Courier;
 import java.util.List;
 import java.util.UUID;
 
-public interface ICourierRepository {
+public interface CourierRepository {
 
     Courier save(Courier courier);
 
