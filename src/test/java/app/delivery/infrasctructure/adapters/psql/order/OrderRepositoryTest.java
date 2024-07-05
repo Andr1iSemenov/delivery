@@ -3,7 +3,7 @@ package app.delivery.infrasctructure.adapters.psql.order;
 import app.delivery.configs.ContainersEnvironment;
 import app.delivery.core.domain.order.aggregate.Order;
 import app.delivery.core.domain.order.aggregate.OrderStatus;
-import app.delivery.core.ports.IOrderRepository;
+import app.delivery.core.ports.OrderRepository;
 import app.delivery.core.shared.kernel.Location;
 import app.delivery.core.shared.kernel.Weight;
 import jakarta.persistence.EntityNotFoundException;
@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class OrderRepositoryTest extends ContainersEnvironment {
 
     @Autowired
-    IOrderRepository orderRepository;
+    OrderRepository orderRepository;
 
 
     @Test

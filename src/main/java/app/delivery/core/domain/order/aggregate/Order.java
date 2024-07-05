@@ -7,27 +7,21 @@ import lombok.*;
 
 import java.util.UUID;
 
-@Entity
-@Table(name = "orders")
 @Builder
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode(of = "id")
 public class Order {
 
-    @Id
     private UUID id;
 
     private UUID courierId;
 
-    @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-    @Embedded
     private Weight weight;
 
-    @Embedded
     private Location location;
 
 

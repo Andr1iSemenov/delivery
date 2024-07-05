@@ -2,33 +2,28 @@ package app.delivery.core.domain.courier.aggregate;
 
 import app.delivery.core.domain.order.aggregate.Order;
 import app.delivery.core.shared.kernel.Location;
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
 
-@Entity
 @Builder
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode(of = "id")
 public class Courier {
 
     public static final int DEFAULT_LOCATION_X = 1;
     public static final int DEFAULT_LOCATION_Y = 1;
 
-    @Id
     private UUID id;
 
     private String name;
 
     private Transport transport;
 
-    @Embedded
     private Location location;
 
-    @Enumerated(EnumType.STRING)
     private CourierStatus status;
 
 
