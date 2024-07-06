@@ -12,6 +12,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@Table(name = "courier")
 public class CourierEntity {
 
     @Id
@@ -19,6 +20,7 @@ public class CourierEntity {
 
     private String name;
 
+    @Enumerated(EnumType.STRING)
     private Transport transport;
 
     @Embedded

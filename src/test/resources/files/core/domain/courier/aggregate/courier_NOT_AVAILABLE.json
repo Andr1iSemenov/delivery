@@ -1,0 +1,10 @@
+{
+    "id": "11111111-1111-1111-1111-111111111111",
+    "name": "John Doe",
+    "location": {
+        "xCoordinate": 5,
+        "yCoordinate": 5
+    },
+    "transport": "CAR",
+    "status": "NOT_AVAILABLE"
+}

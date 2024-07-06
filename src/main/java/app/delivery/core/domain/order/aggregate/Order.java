@@ -2,7 +2,6 @@ package app.delivery.core.domain.order.aggregate;
 
 import app.delivery.core.shared.kernel.Location;
 import app.delivery.core.shared.kernel.Weight;
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;

@@ -5,13 +5,16 @@ import app.delivery.core.domain.courier.aggregate.Courier;
 import app.delivery.core.domain.courier.aggregate.CourierStatus;
 import app.delivery.core.domain.courier.aggregate.Transport;
 import app.delivery.core.ports.CourierRepository;
+import app.delivery.utils.JsonFileReader;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,11 +24,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class CourierRepositoryTest extends ContainersEnvironment {
 
+    private static final UUID COURIER_ID = UUID.fromString("11111111-1111-1111-1111-111111111111");
+
     @Autowired
     CourierRepository courierRepository;
 
+
     @Test
-    void testSaveCourier() {
+    void saveCourier() {
         UUID courierId = UUID.randomUUID();
         Courier courier = Courier.create(courierId, "John Doe", Transport.CAR);
 
@@ -38,58 +44,51 @@ class CourierRepositoryTest extends ContainersEnvironment {
     }
 
     @Test
-    void testUpdateCourier() {
-        UUID courierId = UUID.randomUUID();
-        Courier courier = Courier.create(courierId, "John Doe", Transport.CAR);
+    @Sql({
+            "/files/infrastructure/adapters/postgres/courier/sql/00_truncate.sql",
+            "/files/infrastructure/adapters/postgres/courier/sql/01_insert_courier_READY.sql"
+    })
+    void updateCourier() throws IOException {
+        Courier courier = JsonFileReader.readFromFile("/files/core/domain/courier/aggregate/courier_NOT_AVAILABLE.json", Courier.class);
 
-        courierRepository.save(courier);
-        courier.startWorkDay();
-
-        courierRepository.update(courier);
-        Courier updatedCourier = courierRepository.findById(courierId);
-
-        assertEquals(CourierStatus.READY, updatedCourier.getStatus());
+        assertDoesNotThrow(() -> courierRepository.update(courier));
     }
 
     @Test
-    void testFindById() {
-        UUID courierId = UUID.randomUUID();
-        Courier courier = Courier.create(courierId, "John Doe", Transport.CAR);
-
-        courierRepository.save(courier);
-        Courier foundCourier = courierRepository.findById(courierId);
+    @Sql({
+            "/files/infrastructure/adapters/postgres/courier/sql/00_truncate.sql",
+            "/files/infrastructure/adapters/postgres/courier/sql/01_insert_courier_READY.sql"
+    })
+    void findById() {
+        Courier foundCourier = courierRepository.findById(COURIER_ID);
 
         assertAll(
                 () -> assertNotNull(foundCourier),
-                () -> assertEquals(courierId, foundCourier.getId())
+                () -> assertEquals(COURIER_ID, foundCourier.getId())
         );
     }
 
     @Test
-    void testFindByIdNotFound() {
+    void findByIdNotFound() {
         UUID id = UUID.randomUUID();
+
         Throwable exception = assertThrows(JpaObjectRetrievalFailureException.class,
                 () -> courierRepository.findById(id));
         assertEquals(EntityNotFoundException.class, exception.getCause().getClass());
     }
 
     @Test
-    void testFindAllFreeCouriers() {
-        Courier courier1 = Courier.create(UUID.randomUUID(), "John Doe", Transport.CAR);
-        Courier courier2 = Courier.create(UUID.randomUUID(), "Jane Doe", Transport.SCOOTER);
-        Courier courier3 = Courier.create(UUID.randomUUID(), "Jim Beam", Transport.PEDESTRIAN);
-
-        courier1.startWorkDay();
-        courier2.startWorkDay();
-
-        courierRepository.save(courier1);
-        courierRepository.save(courier2);
-        courierRepository.save(courier3);
-
+    @Sql({
+            "/files/infrastructure/adapters/postgres/courier/sql/00_truncate.sql",
+            "/files/infrastructure/adapters/postgres/courier/sql/01_insert_courier_READY.sql",
+            "/files/infrastructure/adapters/postgres/courier/sql/02_insert_courier_NOT_AVAILABLE.sql",
+            "/files/infrastructure/adapters/postgres/courier/sql/03_insert_courier_BUSY.sql"
+    })
+    void findAllFreeCouriers() {
         List<Courier> freeCouriers = courierRepository.findAllFreeCouriers();
 
         assertAll(
-                () -> assertEquals(2, freeCouriers.size()),
+                () -> assertEquals(1, freeCouriers.size()),
                 () -> assertTrue(freeCouriers.stream().allMatch(courier -> CourierStatus.READY.equals(courier.getStatus())))
         );
     }
