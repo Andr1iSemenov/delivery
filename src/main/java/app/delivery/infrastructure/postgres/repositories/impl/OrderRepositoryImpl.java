@@ -41,6 +41,14 @@ public class OrderRepositoryImpl implements OrderRepository {
     }
 
     @Override
+    public Order findByCourierId(UUID courierId) {
+        return orderConverter.convertToDomain(
+                repository.findByCourierId(courierId)
+                        .orElseThrow(() -> new EntityNotFoundException("Order with courier id %s not found.".formatted(courierId)))
+        );
+    }
+
+    @Override
     public List<Order> findNewOrders() {
         return repository.findAllByStatus(OrderStatus.CREATED)
                 .stream()

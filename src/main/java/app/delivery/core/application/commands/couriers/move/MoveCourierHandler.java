@@ -1,6 +1,8 @@
 package app.delivery.core.application.commands.couriers.move;
 
 import app.delivery.core.application.commands.CommandHandler;
+import app.delivery.core.domain.courier.aggregate.Courier;
+import app.delivery.core.domain.order.aggregate.Order;
 import app.delivery.core.domain.order.aggregate.OrderStatus;
 import app.delivery.core.ports.CourierRepository;
 import app.delivery.core.ports.OrderRepository;
@@ -10,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class MoveCouriersHandler implements CommandHandler<MoveCouriersCommand> {
+public class MoveCourierHandler implements CommandHandler<MoveCourierCommand> {
 
     private final CourierRepository courierRepository;
     private final OrderRepository orderRepository;
@@ -18,12 +20,14 @@ public class MoveCouriersHandler implements CommandHandler<MoveCouriersCommand> 
 
     @Transactional
     @Override
-    public void handle(MoveCouriersCommand command) {
-        command.courier().moveTowardsOrderLocation(command.order());
+    public void handle(MoveCourierCommand command) {
+        Courier courier = courierRepository.findById(command.courierId());
+        Order order = orderRepository.findByCourierId(command.courierId());
+        courier.moveTowardsOrderLocation(order);
 
-        courierRepository.save(command.courier());
-        if (OrderStatus.COMPLETED.equals(command.order().getStatus())) {
-            orderRepository.save(command.order());
+        courierRepository.save(courier);
+        if (OrderStatus.COMPLETED.equals(order.getStatus())) {
+            orderRepository.save(order);
         }
     }
 }

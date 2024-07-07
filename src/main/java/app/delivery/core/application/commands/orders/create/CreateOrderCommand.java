@@ -5,11 +5,11 @@ import lombok.NonNull;
 
 import java.util.UUID;
 
-public record CreateOrderCommand(@NonNull UUID basketId, @NonNull String address, @NonNull Weight weight) {
+public record CreateOrderCommand(@NonNull UUID basketId, @NonNull String street, @NonNull Weight weight) {
 
     public CreateOrderCommand {
-        if (address.isBlank()) {
-            throw new IllegalArgumentException("Address cannot be blank");
+        if (street.isBlank()) {
+            throw new IllegalArgumentException("Street cannot be blank");
         }
     }
 }
