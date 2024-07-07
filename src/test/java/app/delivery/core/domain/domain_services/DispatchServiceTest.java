@@ -1,6 +1,7 @@
 package app.delivery.core.domain.domain_services;
 
 import app.delivery.core.domain.courier.aggregate.Courier;
+import app.delivery.core.domain.courier.aggregate.CourierStatus;
 import app.delivery.core.domain.courier.aggregate.Transport;
 import app.delivery.core.domain.order.aggregate.Order;
 import app.delivery.core.shared.kernel.Location;
@@ -19,7 +20,7 @@ class DispatchServiceTest {
     @Test
     void shouldFindCourier(){
         Order order = Order.create(UUID.randomUUID(), Location.createWithMinimumCoordinates(), new Weight(1));
-        Courier courier = Courier.create(UUID.randomUUID(), "John", Transport.CAR);
+        Courier courier = new Courier(UUID.randomUUID(), "Jane", Transport.PEDESTRIAN, Location.createWithMinimumCoordinates(), CourierStatus.READY);
 
         Courier foundCourier = dispatchService.dispatch(order, List.of(courier));
 
@@ -41,15 +42,30 @@ class DispatchServiceTest {
     @Test
     void shouldFindFasterCourier() {
         Order order = Order.create(UUID.randomUUID(), new Location(10, 10), new Weight(1));
-        Courier courier1 = Courier.create(UUID.randomUUID(), "Jane", Transport.SCOOTER);
-        Courier courier2 = Courier.create(UUID.randomUUID(), "Closest", Transport.PEDESTRIAN);
-        Courier fasterCourier = Courier.create(UUID.randomUUID(), "John", Transport.CAR);
+        Courier courier1 = new Courier(UUID.randomUUID(), "Jane", Transport.PEDESTRIAN, Location.createWithMinimumCoordinates(), CourierStatus.READY);
+        Courier courier2 = new Courier(UUID.randomUUID(), "John", Transport.SCOOTER, Location.createWithMinimumCoordinates(), CourierStatus.READY);
+        Courier fasterCourier = new Courier(UUID.randomUUID(), "Faster", Transport.CAR, Location.createWithMinimumCoordinates(), CourierStatus.READY);
 
         Courier foundCourier = dispatchService.dispatch(order, List.of(courier1, courier2, fasterCourier));
 
         assertAll(
                 () -> assertNotNull(foundCourier),
                 () -> assertEquals(fasterCourier.getId(), foundCourier.getId())
+        );
+    }
+
+    @Test
+    void shouldFindClosestCourier() {
+        Order order = Order.create(UUID.randomUUID(), new Location(10, 10), new Weight(1));
+        Courier courier1 = new Courier(UUID.randomUUID(), "Jane", Transport.PEDESTRIAN, new Location(1, 1), CourierStatus.READY);
+        Courier courier2 = new Courier(UUID.randomUUID(), "John", Transport.PEDESTRIAN, new Location(5, 5), CourierStatus.READY);
+        Courier closestCourier = new Courier(UUID.randomUUID(), "Closest", Transport.PEDESTRIAN, new Location(7, 7), CourierStatus.READY);
+
+        Courier foundCourier = dispatchService.dispatch(order, List.of(courier1, courier2, closestCourier));
+
+        assertAll(
+                () -> assertNotNull(foundCourier),
+                () -> assertEquals(closestCourier.getId(), foundCourier.getId())
         );
     }
 }
