@@ -10,4 +10,6 @@ import java.util.UUID;
 public interface OrderJpaRepository extends JpaRepository<OrderEntity, UUID> {
 
     List<OrderEntity> findAllByStatus(OrderStatus status);
+
+    List<OrderEntity> findAllByStatusIn(List<OrderStatus> statuses);
 }

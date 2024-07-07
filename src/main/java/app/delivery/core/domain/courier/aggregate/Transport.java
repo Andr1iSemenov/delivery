@@ -21,7 +21,7 @@ public enum Transport {
     private final int capacity;
 
 
-    public boolean canCarry(int weight) {
+    public boolean canCarry(double weight) {
         return capacity >= weight;
     }
 
