@@ -18,6 +18,10 @@ public record Location(int xCoordinate, int yCoordinate) {
         }
     }
 
+    public static Location createWithMinimumCoordinates() {
+        return new Location(MINIMUM_COORDINATE, MINIMUM_COORDINATE);
+    }
+
     public int calculateDistance(Location toDistance) {
         Objects.requireNonNull(toDistance);
         int distanceToX = Math.abs(xCoordinate - toDistance.xCoordinate);

@@ -16,7 +16,6 @@ public class Courier {
     public static final int DEFAULT_LOCATION_X = 1;
     public static final int DEFAULT_LOCATION_Y = 1;
 
-
     private UUID id;
 
     private String name;

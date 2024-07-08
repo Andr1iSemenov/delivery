@@ -1,0 +1,12 @@
+{
+    "id": "11111111-1111-1111-1111-111111111111",
+    "courierId": "01908804-617c-790d-8c25-a73a04ac64e3",
+    "status": "ASSIGNED",
+    "weight": {
+        "kg": 15.00
+    },
+    "location": {
+        "xCoordinate": 5,
+        "yCoordinate": 5
+    }
+}
