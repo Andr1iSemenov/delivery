@@ -5,7 +5,6 @@
  */
 package app.delivery.api.adapters.contract.openapi.api;
 
-import app.delivery.api.adapters.contract.openapi.model.Courier;
 import app.delivery.api.adapters.contract.openapi.model.Error;
 import app.delivery.api.adapters.contract.openapi.model.Order;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
@@ -19,25 +18,25 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-07T20:55:22.906773+03:00[Europe/Kiev]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-07T22:44:24.803568+03:00[Europe/Kiev]")
 @Validated
-@Tag(name = "api", description = "the api API")
-public interface ApiApi {
-
-    default ApiApiDelegate getDelegate() {
-        return new ApiApiDelegate() {};
-    }
+@Tag(name = "Orders", description = "the Orders API")
+public interface OrdersApi {
 
     /**
      * POST /api/v1/orders : Создать заказ
@@ -50,6 +49,7 @@ public interface ApiApi {
         operationId = "createOrder",
         summary = "Создать заказ",
         description = "Позволяет создать заказ с целью тестирования",
+        tags = { "Orders" },
         responses = {
             @ApiResponse(responseCode = "201", description = "Успешный ответ"),
             @ApiResponse(responseCode = "default", description = "Ошибка", content = {
@@ -59,48 +59,13 @@ public interface ApiApi {
     )
     @RequestMapping(
         method = RequestMethod.POST,
-        value = "/api/v1/orders",
+        value = "/api/v1/orders/",
         produces = { "application/json" }
     )
     
-    default ResponseEntity<Void> createOrder(
+    ResponseEntity<Void> createOrder(
         
-    ) {
-        return getDelegate().createOrder();
-    }
-
-
-    /**
-     * GET /api/v1/couriers/ : Получить всех курьеров
-     * Позволяет получить всех курьеров
-     *
-     * @return Успешный ответ (status code 200)
-     *         or Ошибка (status code 200)
-     */
-    @Operation(
-        operationId = "getCouriers",
-        summary = "Получить всех курьеров",
-        description = "Позволяет получить всех курьеров",
-        responses = {
-            @ApiResponse(responseCode = "200", description = "Успешный ответ", content = {
-                @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Courier.class)))
-            }),
-            @ApiResponse(responseCode = "default", description = "Ошибка", content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = Error.class))
-            })
-        }
-    )
-    @RequestMapping(
-        method = RequestMethod.GET,
-        value = "/api/v1/couriers/",
-        produces = { "application/json" }
-    )
-    
-    default ResponseEntity<List<Courier>> getCouriers(
-        
-    ) {
-        return getDelegate().getCouriers();
-    }
+    );
 
 
     /**
@@ -114,6 +79,7 @@ public interface ApiApi {
         operationId = "getOrders",
         summary = "Получить все незавершенные заказы",
         description = "Позволяет получить все незавершенные",
+        tags = { "Orders" },
         responses = {
             @ApiResponse(responseCode = "200", description = "Успешный ответ", content = {
                 @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Order.class)))
@@ -129,10 +95,8 @@ public interface ApiApi {
         produces = { "application/json" }
     )
     
-    default ResponseEntity<List<Order>> getOrders(
+    ResponseEntity<List<Order>> getOrders(
         
-    ) {
-        return getDelegate().getOrders();
-    }
+    );
 
 }
