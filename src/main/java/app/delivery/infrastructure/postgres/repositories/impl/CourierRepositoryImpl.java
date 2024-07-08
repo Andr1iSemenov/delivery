@@ -47,4 +47,12 @@ public class CourierRepositoryImpl implements CourierRepository {
                 .map(courierConverter::convertToDomain)
                 .toList();
     }
+
+    @Override
+    public List<Courier> findAllCouriers() {
+        return repository.findAll()
+                .stream()
+                .map(courierConverter::convertToDomain)
+                .toList();
+    }
 }

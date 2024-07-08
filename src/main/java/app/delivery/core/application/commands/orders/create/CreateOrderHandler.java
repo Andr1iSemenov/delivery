@@ -8,17 +8,21 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Random;
+
 @Service
 @RequiredArgsConstructor
 public class CreateOrderHandler implements CommandHandler<CreateOrderCommand> {
 
     private final OrderRepository orderRepository;
+    private final Random random = new Random();
 
 
     @Transactional
     @Override
     public void handle(CreateOrderCommand command) {
         //todo user real location once get will be implemented
-        orderRepository.save(Order.create(command.basketId(), Location.createWithMinimumCoordinates(), command.weight()));
+        //todo move random location to Location method
+        orderRepository.save(Order.create(command.basketId(), new Location(random.nextInt(10) + 1, random.nextInt(10) + 1), command.weight()));
     }
 }

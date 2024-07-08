@@ -14,5 +14,5 @@ public interface OrderJpaRepository extends JpaRepository<OrderEntity, UUID> {
 
     List<OrderEntity> findAllByStatusIn(List<OrderStatus> statuses);
 
-    Optional<OrderEntity> findByCourierId(UUID courierId);
+    Optional<OrderEntity> findByCourierIdAndStatus(UUID courierId, OrderStatus status);
 }
