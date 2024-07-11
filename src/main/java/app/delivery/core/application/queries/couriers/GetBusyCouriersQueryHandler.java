@@ -13,12 +13,11 @@ import java.util.List;
 public class GetBusyCouriersQueryHandler implements QueryHandler<List<GetBusyCouriersResponse>> {
 
     private final CourierJpaRepository courierJpaRepository;
+    private final CourierEntityToResponse courierEntityToResponse;
 
 
     @Override
     public List<GetBusyCouriersResponse> handle() {
-        return courierJpaRepository.findAllByStatus(CourierStatus.BUSY).stream()
-                .map(courierEntity -> new GetBusyCouriersResponse(courierEntity.getId(), courierEntity.getName(), courierEntity.getLocation(), courierEntity.getTransport()))
-                .toList();
+        return courierEntityToResponse.toGetBusyCouriersResponseList(courierJpaRepository.findAllByStatus(CourierStatus.BUSY));
     }
 }

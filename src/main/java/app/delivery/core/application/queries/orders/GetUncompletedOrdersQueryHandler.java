@@ -13,12 +13,11 @@ import java.util.List;
 public class GetUncompletedOrdersQueryHandler implements QueryHandler<List<GetUncompletedOrdersResponse>> {
 
     private final OrderJpaRepository orderJpaRepository;
+    private final OrderEntityToResponse orderEntityToResponse;
 
 
     @Override
     public List<GetUncompletedOrdersResponse> handle() {
-        return orderJpaRepository.findAllByStatusIn(List.of(OrderStatus.CREATED, OrderStatus.ASSIGNED))
-                .stream().map(orderEntity -> new GetUncompletedOrdersResponse(orderEntity.getId(), orderEntity.getCourierId(), orderEntity.getStatus(), orderEntity.getWeight(), orderEntity.getLocation()))
-                .toList();
+        return orderEntityToResponse.toGetUncompletedOrdersResponseList(orderJpaRepository.findAllByStatusIn(List.of(OrderStatus.CREATED, OrderStatus.ASSIGNED)));
     }
 }
