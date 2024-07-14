@@ -47,7 +47,7 @@ public class AssignOrderHandler implements CommandHandler<AssignOrderCommand> {
         }
     }
 
-    public AssignOrderHandler getProxy() {
+    private AssignOrderHandler getProxy() {
         return applicationContext.getBean(AssignOrderHandler.class);
     }
 }
