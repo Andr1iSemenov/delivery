@@ -12,7 +12,7 @@ public final class GeoGrpc {
 
   private GeoGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "app.delivery.infrastructure.grpc.geo.gen.Geo";
+  public static final java.lang.String SERVICE_NAME = "Geo";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest,

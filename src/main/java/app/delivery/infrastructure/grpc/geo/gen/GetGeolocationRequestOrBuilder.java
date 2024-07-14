@@ -6,7 +6,7 @@
 package app.delivery.infrastructure.grpc.geo.gen;
 
 public interface GetGeolocationRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest)
+    // @@protoc_insertion_point(interface_extends:GetGeolocationRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

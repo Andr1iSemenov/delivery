@@ -10,11 +10,11 @@ package app.delivery.infrastructure.grpc.geo.gen;
  * Request
  * </pre>
  *
- * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest}
+ * Protobuf type {@code GetGeolocationRequest}
  */
 public final class GetGeolocationRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest)
+    // @@protoc_insertion_point(message_implements:GetGeolocationRequest)
     GetGeolocationRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
@@ -36,13 +36,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_descriptor;
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_fieldAccessorTable
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest.class, app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest.Builder.class);
   }
@@ -247,21 +247,21 @@ private static final long serialVersionUID = 0L;
    * Request
    * </pre>
    *
-   * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest}
+   * Protobuf type {@code GetGeolocationRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest)
+      // @@protoc_insertion_point(builder_implements:GetGeolocationRequest)
       app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_fieldAccessorTable
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest.class, app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest.Builder.class);
     }
@@ -287,7 +287,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationRequest_descriptor;
     }
 
     @java.lang.Override
@@ -456,10 +456,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest)
+    // @@protoc_insertion_point(builder_scope:GetGeolocationRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest)
+  // @@protoc_insertion_point(class_scope:GetGeolocationRequest)
   private static final app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest();

@@ -6,21 +6,21 @@
 package app.delivery.infrastructure.grpc.geo.gen;
 
 public interface GetGeolocationReplyOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
+    // @@protoc_insertion_point(interface_extends:GetGeolocationReply)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+   * <code>.Location Location = 1;</code>
    * @return Whether the location field is set.
    */
   boolean hasLocation();
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+   * <code>.Location Location = 1;</code>
    * @return The location.
    */
   app.delivery.infrastructure.grpc.geo.gen.Location getLocation();
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+   * <code>.Location Location = 1;</code>
    */
   app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder getLocationOrBuilder();
 }

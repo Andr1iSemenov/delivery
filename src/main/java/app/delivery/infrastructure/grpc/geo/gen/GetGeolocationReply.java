@@ -10,11 +10,11 @@ package app.delivery.infrastructure.grpc.geo.gen;
  * Response
  * </pre>
  *
- * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply}
+ * Protobuf type {@code GetGeolocationReply}
  */
 public final class GetGeolocationReply extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
+    // @@protoc_insertion_point(message_implements:GetGeolocationReply)
     GetGeolocationReplyOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
@@ -35,13 +35,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor;
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationReply_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_fieldAccessorTable
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationReply_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.class, app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.Builder.class);
   }
@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
   public static final int LOCATION_FIELD_NUMBER = 1;
   private app.delivery.infrastructure.grpc.geo.gen.Location location_;
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+   * <code>.Location Location = 1;</code>
    * @return Whether the location field is set.
    */
   @java.lang.Override
@@ -58,7 +58,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+   * <code>.Location Location = 1;</code>
    * @return The location.
    */
   @java.lang.Override
@@ -66,7 +66,7 @@ private static final long serialVersionUID = 0L;
     return location_ == null ? app.delivery.infrastructure.grpc.geo.gen.Location.getDefaultInstance() : location_;
   }
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+   * <code>.Location Location = 1;</code>
    */
   @java.lang.Override
   public app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder getLocationOrBuilder() {
@@ -240,21 +240,21 @@ private static final long serialVersionUID = 0L;
    * Response
    * </pre>
    *
-   * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply}
+   * Protobuf type {@code GetGeolocationReply}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
+      // @@protoc_insertion_point(builder_implements:GetGeolocationReply)
       app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReplyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationReply_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_fieldAccessorTable
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.class, app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.Builder.class);
     }
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_GetGeolocationReply_descriptor;
     }
 
     @java.lang.Override
@@ -396,14 +396,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         app.delivery.infrastructure.grpc.geo.gen.Location, app.delivery.infrastructure.grpc.geo.gen.Location.Builder, app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder> locationBuilder_;
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      * @return The location.
      */
     public app.delivery.infrastructure.grpc.geo.gen.Location getLocation() {
@@ -414,7 +414,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      */
     public Builder setLocation(app.delivery.infrastructure.grpc.geo.gen.Location value) {
       if (locationBuilder_ == null) {
@@ -430,7 +430,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      */
     public Builder setLocation(
         app.delivery.infrastructure.grpc.geo.gen.Location.Builder builderForValue) {
@@ -444,7 +444,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      */
     public Builder mergeLocation(app.delivery.infrastructure.grpc.geo.gen.Location value) {
       if (locationBuilder_ == null) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      */
     public Builder clearLocation() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      */
     public app.delivery.infrastructure.grpc.geo.gen.Location.Builder getLocationBuilder() {
       bitField0_ |= 0x00000001;
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return getLocationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      */
     public app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder getLocationOrBuilder() {
       if (locationBuilder_ != null) {
@@ -497,7 +497,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
+     * <code>.Location Location = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         app.delivery.infrastructure.grpc.geo.gen.Location, app.delivery.infrastructure.grpc.geo.gen.Location.Builder, app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder> 
@@ -513,10 +513,10 @@ private static final long serialVersionUID = 0L;
       return locationBuilder_;
     }
 
-    // @@protoc_insertion_point(builder_scope:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
+    // @@protoc_insertion_point(builder_scope:GetGeolocationReply)
   }
 
-  // @@protoc_insertion_point(class_scope:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
+  // @@protoc_insertion_point(class_scope:GetGeolocationReply)
   private static final app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply();

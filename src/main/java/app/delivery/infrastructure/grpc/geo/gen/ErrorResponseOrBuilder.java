@@ -6,7 +6,7 @@
 package app.delivery.infrastructure.grpc.geo.gen;
 
 public interface ErrorResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:app.delivery.infrastructure.grpc.geo.gen.ErrorResponse)
+    // @@protoc_insertion_point(interface_extends:ErrorResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

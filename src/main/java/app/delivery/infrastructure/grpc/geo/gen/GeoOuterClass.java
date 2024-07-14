@@ -26,25 +26,25 @@ public final class GeoOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_descriptor;
+    internal_static_GetGeolocationRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_fieldAccessorTable;
+      internal_static_GetGeolocationRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor;
+    internal_static_GetGeolocationReply_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_fieldAccessorTable;
+      internal_static_GetGeolocationReply_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_descriptor;
+    internal_static_Location_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_fieldAccessorTable;
+      internal_static_Location_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_descriptor;
+    internal_static_ErrorResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_fieldAccessorTable;
+      internal_static_ErrorResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -54,45 +54,42 @@ public final class GeoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\tGeo.proto\022(app.delivery.infrastructure" +
-      ".grpc.geo.gen\"\'\n\025GetGeolocationRequest\022\016" +
-      "\n\006Street\030\001 \001(\t\"[\n\023GetGeolocationReply\022D\n" +
-      "\010Location\030\001 \001(\01322.app.delivery.infrastru" +
-      "cture.grpc.geo.gen.Location\" \n\010Location\022" +
-      "\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"\035\n\rErrorResponse\022\014" +
-      "\n\004text\030\001 \001(\t2\230\001\n\003Geo\022\220\001\n\016GetGeolocation\022" +
-      "?.app.delivery.infrastructure.grpc.geo.g" +
-      "en.GetGeolocationRequest\032=.app.delivery." +
-      "infrastructure.grpc.geo.gen.GetGeolocati" +
-      "onReplyB\002P\001b\006proto3"
+      "\n\tGeo.proto\"\'\n\025GetGeolocationRequest\022\016\n\006" +
+      "Street\030\001 \001(\t\"2\n\023GetGeolocationReply\022\033\n\010L" +
+      "ocation\030\001 \001(\0132\t.Location\" \n\010Location\022\t\n\001" +
+      "x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"\035\n\rErrorResponse\022\014\n\004t" +
+      "ext\030\001 \001(\t2E\n\003Geo\022>\n\016GetGeolocation\022\026.Get" +
+      "GeolocationRequest\032\024.GetGeolocationReply" +
+      "B9\n(app.delivery.infrastructure.grpc.geo" +
+      ".genP\001\252\002\nGeoApp.Apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_descriptor =
+    internal_static_GetGeolocationRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_fieldAccessorTable = new
+    internal_static_GetGeolocationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationRequest_descriptor,
+        internal_static_GetGeolocationRequest_descriptor,
         new java.lang.String[] { "Street", });
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor =
+    internal_static_GetGeolocationReply_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_fieldAccessorTable = new
+    internal_static_GetGeolocationReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor,
+        internal_static_GetGeolocationReply_descriptor,
         new java.lang.String[] { "Location", });
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_descriptor =
+    internal_static_Location_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_fieldAccessorTable = new
+    internal_static_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_descriptor,
+        internal_static_Location_descriptor,
         new java.lang.String[] { "X", "Y", });
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_descriptor =
+    internal_static_ErrorResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_fieldAccessorTable = new
+    internal_static_ErrorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_descriptor,
+        internal_static_ErrorResponse_descriptor,
         new java.lang.String[] { "Text", });
     descriptor.resolveAllFeaturesImmutable();
   }

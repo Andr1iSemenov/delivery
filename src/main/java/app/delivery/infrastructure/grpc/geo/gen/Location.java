@@ -10,11 +10,11 @@ package app.delivery.infrastructure.grpc.geo.gen;
  * Geolocation
  * </pre>
  *
- * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.Location}
+ * Protobuf type {@code Location}
  */
 public final class Location extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:app.delivery.infrastructure.grpc.geo.gen.Location)
+    // @@protoc_insertion_point(message_implements:Location)
     LocationOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
@@ -35,13 +35,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_descriptor;
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_Location_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_fieldAccessorTable
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_Location_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             app.delivery.infrastructure.grpc.geo.gen.Location.class, app.delivery.infrastructure.grpc.geo.gen.Location.Builder.class);
   }
@@ -241,21 +241,21 @@ private static final long serialVersionUID = 0L;
    * Geolocation
    * </pre>
    *
-   * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.Location}
+   * Protobuf type {@code Location}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:app.delivery.infrastructure.grpc.geo.gen.Location)
+      // @@protoc_insertion_point(builder_implements:Location)
       app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_Location_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_fieldAccessorTable
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_Location_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               app.delivery.infrastructure.grpc.geo.gen.Location.class, app.delivery.infrastructure.grpc.geo.gen.Location.Builder.class);
     }
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_Location_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_Location_descriptor;
     }
 
     @java.lang.Override
@@ -452,10 +452,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:app.delivery.infrastructure.grpc.geo.gen.Location)
+    // @@protoc_insertion_point(builder_scope:Location)
   }
 
-  // @@protoc_insertion_point(class_scope:app.delivery.infrastructure.grpc.geo.gen.Location)
+  // @@protoc_insertion_point(class_scope:Location)
   private static final app.delivery.infrastructure.grpc.geo.gen.Location DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new app.delivery.infrastructure.grpc.geo.gen.Location();
