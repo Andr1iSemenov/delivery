@@ -1,4 +1,4 @@
-package app.delivery.infrastructure.grpc.geo;
+package app.delivery.infrastructure.grpc.geo.gen;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -12,32 +12,32 @@ public final class GeoGrpc {
 
   private GeoGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "app.delivery.infrastructure.grpc.geo.Geo";
+  public static final java.lang.String SERVICE_NAME = "app.delivery.infrastructure.grpc.geo.gen.Geo";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<app.delivery.infrastructure.grpc.geo.GetGeolocationRequest,
-      app.delivery.infrastructure.grpc.geo.GetGeolocationReply> getGetGeolocationMethod;
+  private static volatile io.grpc.MethodDescriptor<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest,
+      app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply> getGetGeolocationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetGeolocation",
-      requestType = app.delivery.infrastructure.grpc.geo.GetGeolocationRequest.class,
-      responseType = app.delivery.infrastructure.grpc.geo.GetGeolocationReply.class,
+      requestType = app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest.class,
+      responseType = app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<app.delivery.infrastructure.grpc.geo.GetGeolocationRequest,
-      app.delivery.infrastructure.grpc.geo.GetGeolocationReply> getGetGeolocationMethod() {
-    io.grpc.MethodDescriptor<app.delivery.infrastructure.grpc.geo.GetGeolocationRequest, app.delivery.infrastructure.grpc.geo.GetGeolocationReply> getGetGeolocationMethod;
+  public static io.grpc.MethodDescriptor<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest,
+      app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply> getGetGeolocationMethod() {
+    io.grpc.MethodDescriptor<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest, app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply> getGetGeolocationMethod;
     if ((getGetGeolocationMethod = GeoGrpc.getGetGeolocationMethod) == null) {
       synchronized (GeoGrpc.class) {
         if ((getGetGeolocationMethod = GeoGrpc.getGetGeolocationMethod) == null) {
           GeoGrpc.getGetGeolocationMethod = getGetGeolocationMethod =
-              io.grpc.MethodDescriptor.<app.delivery.infrastructure.grpc.geo.GetGeolocationRequest, app.delivery.infrastructure.grpc.geo.GetGeolocationReply>newBuilder()
+              io.grpc.MethodDescriptor.<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest, app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetGeolocation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  app.delivery.infrastructure.grpc.geo.GetGeolocationRequest.getDefaultInstance()))
+                  app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  app.delivery.infrastructure.grpc.geo.GetGeolocationReply.getDefaultInstance()))
+                  app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.getDefaultInstance()))
               .setSchemaDescriptor(new GeoMethodDescriptorSupplier("GetGeolocation"))
               .build();
         }
@@ -102,8 +102,8 @@ public final class GeoGrpc {
      * Get Geolocation
      * </pre>
      */
-    default void getGeolocation(app.delivery.infrastructure.grpc.geo.GetGeolocationRequest request,
-        io.grpc.stub.StreamObserver<app.delivery.infrastructure.grpc.geo.GetGeolocationReply> responseObserver) {
+    default void getGeolocation(app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest request,
+        io.grpc.stub.StreamObserver<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGeolocationMethod(), responseObserver);
     }
   }
@@ -146,8 +146,8 @@ public final class GeoGrpc {
      * Get Geolocation
      * </pre>
      */
-    public void getGeolocation(app.delivery.infrastructure.grpc.geo.GetGeolocationRequest request,
-        io.grpc.stub.StreamObserver<app.delivery.infrastructure.grpc.geo.GetGeolocationReply> responseObserver) {
+    public void getGeolocation(app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest request,
+        io.grpc.stub.StreamObserver<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGeolocationMethod(), getCallOptions()), request, responseObserver);
     }
@@ -177,7 +177,7 @@ public final class GeoGrpc {
      * Get Geolocation
      * </pre>
      */
-    public app.delivery.infrastructure.grpc.geo.GetGeolocationReply getGeolocation(app.delivery.infrastructure.grpc.geo.GetGeolocationRequest request) {
+    public app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply getGeolocation(app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGeolocationMethod(), getCallOptions(), request);
     }
@@ -207,8 +207,8 @@ public final class GeoGrpc {
      * Get Geolocation
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<app.delivery.infrastructure.grpc.geo.GetGeolocationReply> getGeolocation(
-        app.delivery.infrastructure.grpc.geo.GetGeolocationRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply> getGeolocation(
+        app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGeolocationMethod(), getCallOptions()), request);
     }
@@ -234,8 +234,8 @@ public final class GeoGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_GEOLOCATION:
-          serviceImpl.getGeolocation((app.delivery.infrastructure.grpc.geo.GetGeolocationRequest) request,
-              (io.grpc.stub.StreamObserver<app.delivery.infrastructure.grpc.geo.GetGeolocationReply>) responseObserver);
+          serviceImpl.getGeolocation((app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest) request,
+              (io.grpc.stub.StreamObserver<app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -259,8 +259,8 @@ public final class GeoGrpc {
           getGetGeolocationMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              app.delivery.infrastructure.grpc.geo.GetGeolocationRequest,
-              app.delivery.infrastructure.grpc.geo.GetGeolocationReply>(
+              app.delivery.infrastructure.grpc.geo.gen.GetGeolocationRequest,
+              app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply>(
                 service, METHODID_GET_GEOLOCATION)))
         .build();
   }
@@ -271,7 +271,7 @@ public final class GeoGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return app.delivery.infrastructure.grpc.geo.GeoOuterClass.getDescriptor();
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.getDescriptor();
     }
 
     @java.lang.Override

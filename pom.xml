@@ -117,7 +117,7 @@
 
     <build>
         <extensions>
-            <!-- The os-maven-plugin is added to manage platform-specific dependencies and ensure compatibility across different operating systems. -->
+            <!-- The os-maven-plugin is added to manage platform-specific dependencies and ensure compatibility across different operating systems. (for os.detected.classifier) -->
             <extension>
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>

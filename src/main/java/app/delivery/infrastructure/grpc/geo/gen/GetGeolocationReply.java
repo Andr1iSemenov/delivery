@@ -3,18 +3,18 @@
 // source: Geo.proto
 // Protobuf Java Version: 4.27.2
 
-package app.delivery.infrastructure.grpc.geo;
+package app.delivery.infrastructure.grpc.geo.gen;
 
 /**
  * <pre>
  * Response
  * </pre>
  *
- * Protobuf type {@code app.delivery.infrastructure.grpc.geo.GetGeolocationReply}
+ * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply}
  */
 public final class GetGeolocationReply extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:app.delivery.infrastructure.grpc.geo.GetGeolocationReply)
+    // @@protoc_insertion_point(message_implements:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
     GetGeolocationReplyOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
@@ -35,22 +35,22 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_GetGeolocationReply_descriptor;
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_GetGeolocationReply_fieldAccessorTable
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            app.delivery.infrastructure.grpc.geo.GetGeolocationReply.class, app.delivery.infrastructure.grpc.geo.GetGeolocationReply.Builder.class);
+            app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.class, app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.Builder.class);
   }
 
   private int bitField0_;
   public static final int LOCATION_FIELD_NUMBER = 1;
-  private app.delivery.infrastructure.grpc.geo.Location location_;
+  private app.delivery.infrastructure.grpc.geo.gen.Location location_;
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
    * @return Whether the location field is set.
    */
   @java.lang.Override
@@ -58,19 +58,19 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
    * @return The location.
    */
   @java.lang.Override
-  public app.delivery.infrastructure.grpc.geo.Location getLocation() {
-    return location_ == null ? app.delivery.infrastructure.grpc.geo.Location.getDefaultInstance() : location_;
+  public app.delivery.infrastructure.grpc.geo.gen.Location getLocation() {
+    return location_ == null ? app.delivery.infrastructure.grpc.geo.gen.Location.getDefaultInstance() : location_;
   }
   /**
-   * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+   * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
    */
   @java.lang.Override
-  public app.delivery.infrastructure.grpc.geo.LocationOrBuilder getLocationOrBuilder() {
-    return location_ == null ? app.delivery.infrastructure.grpc.geo.Location.getDefaultInstance() : location_;
+  public app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder getLocationOrBuilder() {
+    return location_ == null ? app.delivery.infrastructure.grpc.geo.gen.Location.getDefaultInstance() : location_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -113,10 +113,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof app.delivery.infrastructure.grpc.geo.GetGeolocationReply)) {
+    if (!(obj instanceof app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)) {
       return super.equals(obj);
     }
-    app.delivery.infrastructure.grpc.geo.GetGeolocationReply other = (app.delivery.infrastructure.grpc.geo.GetGeolocationReply) obj;
+    app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply other = (app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply) obj;
 
     if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
@@ -143,44 +143,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(byte[] data)
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(java.io.InputStream input)
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -188,26 +188,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseDelimitedFrom(java.io.InputStream input)
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseDelimitedFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(app.delivery.infrastructure.grpc.geo.GetGeolocationReply prototype) {
+  public static Builder newBuilder(app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -240,26 +240,26 @@ private static final long serialVersionUID = 0L;
    * Response
    * </pre>
    *
-   * Protobuf type {@code app.delivery.infrastructure.grpc.geo.GetGeolocationReply}
+   * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:app.delivery.infrastructure.grpc.geo.GetGeolocationReply)
-      app.delivery.infrastructure.grpc.geo.GetGeolocationReplyOrBuilder {
+      // @@protoc_insertion_point(builder_implements:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
+      app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReplyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_GetGeolocationReply_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_GetGeolocationReply_fieldAccessorTable
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              app.delivery.infrastructure.grpc.geo.GetGeolocationReply.class, app.delivery.infrastructure.grpc.geo.GetGeolocationReply.Builder.class);
+              app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.class, app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.Builder.class);
     }
 
-    // Construct using app.delivery.infrastructure.grpc.geo.GetGeolocationReply.newBuilder()
+    // Construct using app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -290,17 +290,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_GetGeolocationReply_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_GetGeolocationReply_descriptor;
     }
 
     @java.lang.Override
-    public app.delivery.infrastructure.grpc.geo.GetGeolocationReply getDefaultInstanceForType() {
-      return app.delivery.infrastructure.grpc.geo.GetGeolocationReply.getDefaultInstance();
+    public app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply getDefaultInstanceForType() {
+      return app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.getDefaultInstance();
     }
 
     @java.lang.Override
-    public app.delivery.infrastructure.grpc.geo.GetGeolocationReply build() {
-      app.delivery.infrastructure.grpc.geo.GetGeolocationReply result = buildPartial();
+    public app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply build() {
+      app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -308,14 +308,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public app.delivery.infrastructure.grpc.geo.GetGeolocationReply buildPartial() {
-      app.delivery.infrastructure.grpc.geo.GetGeolocationReply result = new app.delivery.infrastructure.grpc.geo.GetGeolocationReply(this);
+    public app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply buildPartial() {
+      app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply result = new app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(app.delivery.infrastructure.grpc.geo.GetGeolocationReply result) {
+    private void buildPartial0(app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -329,16 +329,16 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof app.delivery.infrastructure.grpc.geo.GetGeolocationReply) {
-        return mergeFrom((app.delivery.infrastructure.grpc.geo.GetGeolocationReply)other);
+      if (other instanceof app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply) {
+        return mergeFrom((app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(app.delivery.infrastructure.grpc.geo.GetGeolocationReply other) {
-      if (other == app.delivery.infrastructure.grpc.geo.GetGeolocationReply.getDefaultInstance()) return this;
+    public Builder mergeFrom(app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply other) {
+      if (other == app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply.getDefaultInstance()) return this;
       if (other.hasLocation()) {
         mergeLocation(other.getLocation());
       }
@@ -392,31 +392,31 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private app.delivery.infrastructure.grpc.geo.Location location_;
+    private app.delivery.infrastructure.grpc.geo.gen.Location location_;
     private com.google.protobuf.SingleFieldBuilder<
-        app.delivery.infrastructure.grpc.geo.Location, app.delivery.infrastructure.grpc.geo.Location.Builder, app.delivery.infrastructure.grpc.geo.LocationOrBuilder> locationBuilder_;
+        app.delivery.infrastructure.grpc.geo.gen.Location, app.delivery.infrastructure.grpc.geo.gen.Location.Builder, app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder> locationBuilder_;
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      * @return The location.
      */
-    public app.delivery.infrastructure.grpc.geo.Location getLocation() {
+    public app.delivery.infrastructure.grpc.geo.gen.Location getLocation() {
       if (locationBuilder_ == null) {
-        return location_ == null ? app.delivery.infrastructure.grpc.geo.Location.getDefaultInstance() : location_;
+        return location_ == null ? app.delivery.infrastructure.grpc.geo.gen.Location.getDefaultInstance() : location_;
       } else {
         return locationBuilder_.getMessage();
       }
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      */
-    public Builder setLocation(app.delivery.infrastructure.grpc.geo.Location value) {
+    public Builder setLocation(app.delivery.infrastructure.grpc.geo.gen.Location value) {
       if (locationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -430,10 +430,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      */
     public Builder setLocation(
-        app.delivery.infrastructure.grpc.geo.Location.Builder builderForValue) {
+        app.delivery.infrastructure.grpc.geo.gen.Location.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
       } else {
@@ -444,13 +444,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      */
-    public Builder mergeLocation(app.delivery.infrastructure.grpc.geo.Location value) {
+    public Builder mergeLocation(app.delivery.infrastructure.grpc.geo.gen.Location value) {
       if (locationBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0) &&
           location_ != null &&
-          location_ != app.delivery.infrastructure.grpc.geo.Location.getDefaultInstance()) {
+          location_ != app.delivery.infrastructure.grpc.geo.gen.Location.getDefaultInstance()) {
           getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      */
     public Builder clearLocation() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -478,33 +478,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      */
-    public app.delivery.infrastructure.grpc.geo.Location.Builder getLocationBuilder() {
+    public app.delivery.infrastructure.grpc.geo.gen.Location.Builder getLocationBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      */
-    public app.delivery.infrastructure.grpc.geo.LocationOrBuilder getLocationOrBuilder() {
+    public app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder getLocationOrBuilder() {
       if (locationBuilder_ != null) {
         return locationBuilder_.getMessageOrBuilder();
       } else {
         return location_ == null ?
-            app.delivery.infrastructure.grpc.geo.Location.getDefaultInstance() : location_;
+            app.delivery.infrastructure.grpc.geo.gen.Location.getDefaultInstance() : location_;
       }
     }
     /**
-     * <code>.app.delivery.infrastructure.grpc.geo.Location Location = 1;</code>
+     * <code>.app.delivery.infrastructure.grpc.geo.gen.Location Location = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
-        app.delivery.infrastructure.grpc.geo.Location, app.delivery.infrastructure.grpc.geo.Location.Builder, app.delivery.infrastructure.grpc.geo.LocationOrBuilder> 
+        app.delivery.infrastructure.grpc.geo.gen.Location, app.delivery.infrastructure.grpc.geo.gen.Location.Builder, app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder> 
         getLocationFieldBuilder() {
       if (locationBuilder_ == null) {
         locationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            app.delivery.infrastructure.grpc.geo.Location, app.delivery.infrastructure.grpc.geo.Location.Builder, app.delivery.infrastructure.grpc.geo.LocationOrBuilder>(
+            app.delivery.infrastructure.grpc.geo.gen.Location, app.delivery.infrastructure.grpc.geo.gen.Location.Builder, app.delivery.infrastructure.grpc.geo.gen.LocationOrBuilder>(
                 getLocation(),
                 getParentForChildren(),
                 isClean());
@@ -513,16 +513,16 @@ private static final long serialVersionUID = 0L;
       return locationBuilder_;
     }
 
-    // @@protoc_insertion_point(builder_scope:app.delivery.infrastructure.grpc.geo.GetGeolocationReply)
+    // @@protoc_insertion_point(builder_scope:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
   }
 
-  // @@protoc_insertion_point(class_scope:app.delivery.infrastructure.grpc.geo.GetGeolocationReply)
-  private static final app.delivery.infrastructure.grpc.geo.GetGeolocationReply DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply)
+  private static final app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new app.delivery.infrastructure.grpc.geo.GetGeolocationReply();
+    DEFAULT_INSTANCE = new app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply();
   }
 
-  public static app.delivery.infrastructure.grpc.geo.GetGeolocationReply getDefaultInstance() {
+  public static app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -558,7 +558,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public app.delivery.infrastructure.grpc.geo.GetGeolocationReply getDefaultInstanceForType() {
+  public app.delivery.infrastructure.grpc.geo.gen.GetGeolocationReply getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

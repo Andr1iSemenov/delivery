@@ -1,6 +1,6 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package app.delivery.infrastructure.grpc.geo;
+package app.delivery.infrastructure.grpc.geo.gen;
 
 // The Geo service definition.
 service Geo {

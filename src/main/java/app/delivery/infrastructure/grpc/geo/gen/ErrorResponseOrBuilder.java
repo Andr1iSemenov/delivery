@@ -3,10 +3,10 @@
 // source: Geo.proto
 // Protobuf Java Version: 4.27.2
 
-package app.delivery.infrastructure.grpc.geo;
+package app.delivery.infrastructure.grpc.geo.gen;
 
 public interface ErrorResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:app.delivery.infrastructure.grpc.geo.ErrorResponse)
+    // @@protoc_insertion_point(interface_extends:app.delivery.infrastructure.grpc.geo.gen.ErrorResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

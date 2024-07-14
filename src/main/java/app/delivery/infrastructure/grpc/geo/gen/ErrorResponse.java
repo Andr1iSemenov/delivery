@@ -3,19 +3,15 @@
 // source: Geo.proto
 // Protobuf Java Version: 4.27.2
 
-package app.delivery.infrastructure.grpc.geo;
+package app.delivery.infrastructure.grpc.geo.gen;
 
 /**
- * <pre>
- * Geolocation
- * </pre>
- *
- * Protobuf type {@code app.delivery.infrastructure.grpc.geo.Location}
+ * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.ErrorResponse}
  */
-public final class Location extends
+public final class ErrorResponse extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:app.delivery.infrastructure.grpc.geo.Location)
-    LocationOrBuilder {
+    // @@protoc_insertion_point(message_implements:app.delivery.infrastructure.grpc.geo.gen.ErrorResponse)
+    ErrorResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -24,48 +20,66 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 27,
       /* patch= */ 2,
       /* suffix= */ "",
-      Location.class.getName());
+      ErrorResponse.class.getName());
   }
-  // Use Location.newBuilder() to construct.
-  private Location(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use ErrorResponse.newBuilder() to construct.
+  private ErrorResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private Location() {
+  private ErrorResponse() {
+    text_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_Location_descriptor;
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_Location_fieldAccessorTable
+    return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            app.delivery.infrastructure.grpc.geo.Location.class, app.delivery.infrastructure.grpc.geo.Location.Builder.class);
+            app.delivery.infrastructure.grpc.geo.gen.ErrorResponse.class, app.delivery.infrastructure.grpc.geo.gen.ErrorResponse.Builder.class);
   }
 
-  public static final int X_FIELD_NUMBER = 1;
-  private int x_ = 0;
+  public static final int TEXT_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object text_ = "";
   /**
-   * <code>int32 x = 1;</code>
-   * @return The x.
+   * <code>string text = 1;</code>
+   * @return The text.
    */
   @java.lang.Override
-  public int getX() {
-    return x_;
+  public java.lang.String getText() {
+    java.lang.Object ref = text_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      text_ = s;
+      return s;
+    }
   }
-
-  public static final int Y_FIELD_NUMBER = 2;
-  private int y_ = 0;
   /**
-   * <code>int32 y = 2;</code>
-   * @return The y.
+   * <code>string text = 1;</code>
+   * @return The bytes for text.
    */
   @java.lang.Override
-  public int getY() {
-    return y_;
+  public com.google.protobuf.ByteString
+      getTextBytes() {
+    java.lang.Object ref = text_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      text_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -82,11 +96,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (x_ != 0) {
-      output.writeInt32(1, x_);
-    }
-    if (y_ != 0) {
-      output.writeInt32(2, y_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(text_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, text_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -97,13 +108,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (x_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, x_);
-    }
-    if (y_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, y_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(text_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, text_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -115,15 +121,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof app.delivery.infrastructure.grpc.geo.Location)) {
+    if (!(obj instanceof app.delivery.infrastructure.grpc.geo.gen.ErrorResponse)) {
       return super.equals(obj);
     }
-    app.delivery.infrastructure.grpc.geo.Location other = (app.delivery.infrastructure.grpc.geo.Location) obj;
+    app.delivery.infrastructure.grpc.geo.gen.ErrorResponse other = (app.delivery.infrastructure.grpc.geo.gen.ErrorResponse) obj;
 
-    if (getX()
-        != other.getX()) return false;
-    if (getY()
-        != other.getY()) return false;
+    if (!getText()
+        .equals(other.getText())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -135,53 +139,51 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + X_FIELD_NUMBER;
-    hash = (53 * hash) + getX();
-    hash = (37 * hash) + Y_FIELD_NUMBER;
-    hash = (53 * hash) + getY();
+    hash = (37 * hash) + TEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getText().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(byte[] data)
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(java.io.InputStream input)
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -189,26 +191,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static app.delivery.infrastructure.grpc.geo.Location parseDelimitedFrom(java.io.InputStream input)
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static app.delivery.infrastructure.grpc.geo.Location parseDelimitedFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static app.delivery.infrastructure.grpc.geo.Location parseFrom(
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -221,7 +223,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(app.delivery.infrastructure.grpc.geo.Location prototype) {
+  public static Builder newBuilder(app.delivery.infrastructure.grpc.geo.gen.ErrorResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -237,30 +239,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Geolocation
-   * </pre>
-   *
-   * Protobuf type {@code app.delivery.infrastructure.grpc.geo.Location}
+   * Protobuf type {@code app.delivery.infrastructure.grpc.geo.gen.ErrorResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:app.delivery.infrastructure.grpc.geo.Location)
-      app.delivery.infrastructure.grpc.geo.LocationOrBuilder {
+      // @@protoc_insertion_point(builder_implements:app.delivery.infrastructure.grpc.geo.gen.ErrorResponse)
+      app.delivery.infrastructure.grpc.geo.gen.ErrorResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_Location_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_Location_fieldAccessorTable
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              app.delivery.infrastructure.grpc.geo.Location.class, app.delivery.infrastructure.grpc.geo.Location.Builder.class);
+              app.delivery.infrastructure.grpc.geo.gen.ErrorResponse.class, app.delivery.infrastructure.grpc.geo.gen.ErrorResponse.Builder.class);
     }
 
-    // Construct using app.delivery.infrastructure.grpc.geo.Location.newBuilder()
+    // Construct using app.delivery.infrastructure.grpc.geo.gen.ErrorResponse.newBuilder()
     private Builder() {
 
     }
@@ -274,25 +272,24 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      x_ = 0;
-      y_ = 0;
+      text_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return app.delivery.infrastructure.grpc.geo.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_Location_descriptor;
+      return app.delivery.infrastructure.grpc.geo.gen.GeoOuterClass.internal_static_app_delivery_infrastructure_grpc_geo_gen_ErrorResponse_descriptor;
     }
 
     @java.lang.Override
-    public app.delivery.infrastructure.grpc.geo.Location getDefaultInstanceForType() {
-      return app.delivery.infrastructure.grpc.geo.Location.getDefaultInstance();
+    public app.delivery.infrastructure.grpc.geo.gen.ErrorResponse getDefaultInstanceForType() {
+      return app.delivery.infrastructure.grpc.geo.gen.ErrorResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public app.delivery.infrastructure.grpc.geo.Location build() {
-      app.delivery.infrastructure.grpc.geo.Location result = buildPartial();
+    public app.delivery.infrastructure.grpc.geo.gen.ErrorResponse build() {
+      app.delivery.infrastructure.grpc.geo.gen.ErrorResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -300,40 +297,36 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public app.delivery.infrastructure.grpc.geo.Location buildPartial() {
-      app.delivery.infrastructure.grpc.geo.Location result = new app.delivery.infrastructure.grpc.geo.Location(this);
+    public app.delivery.infrastructure.grpc.geo.gen.ErrorResponse buildPartial() {
+      app.delivery.infrastructure.grpc.geo.gen.ErrorResponse result = new app.delivery.infrastructure.grpc.geo.gen.ErrorResponse(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(app.delivery.infrastructure.grpc.geo.Location result) {
+    private void buildPartial0(app.delivery.infrastructure.grpc.geo.gen.ErrorResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.x_ = x_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.y_ = y_;
+        result.text_ = text_;
       }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof app.delivery.infrastructure.grpc.geo.Location) {
-        return mergeFrom((app.delivery.infrastructure.grpc.geo.Location)other);
+      if (other instanceof app.delivery.infrastructure.grpc.geo.gen.ErrorResponse) {
+        return mergeFrom((app.delivery.infrastructure.grpc.geo.gen.ErrorResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(app.delivery.infrastructure.grpc.geo.Location other) {
-      if (other == app.delivery.infrastructure.grpc.geo.Location.getDefaultInstance()) return this;
-      if (other.getX() != 0) {
-        setX(other.getX());
-      }
-      if (other.getY() != 0) {
-        setY(other.getY());
+    public Builder mergeFrom(app.delivery.infrastructure.grpc.geo.gen.ErrorResponse other) {
+      if (other == app.delivery.infrastructure.grpc.geo.gen.ErrorResponse.getDefaultInstance()) return this;
+      if (!other.getText().isEmpty()) {
+        text_ = other.text_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -361,16 +354,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              x_ = input.readInt32();
+            case 10: {
+              text_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 8
-            case 16: {
-              y_ = input.readInt32();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 16
+            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -388,87 +376,95 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int x_ ;
+    private java.lang.Object text_ = "";
     /**
-     * <code>int32 x = 1;</code>
-     * @return The x.
+     * <code>string text = 1;</code>
+     * @return The text.
      */
-    @java.lang.Override
-    public int getX() {
-      return x_;
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 x = 1;</code>
-     * @param value The x to set.
+     * <code>string text = 1;</code>
+     * @return The bytes for text.
+     */
+    public com.google.protobuf.ByteString
+        getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string text = 1;</code>
+     * @param value The text to set.
      * @return This builder for chaining.
      */
-    public Builder setX(int value) {
-
-      x_ = value;
+    public Builder setText(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      text_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 x = 1;</code>
+     * <code>string text = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearX() {
+    public Builder clearText() {
+      text_ = getDefaultInstance().getText();
       bitField0_ = (bitField0_ & ~0x00000001);
-      x_ = 0;
       onChanged();
       return this;
     }
-
-    private int y_ ;
     /**
-     * <code>int32 y = 2;</code>
-     * @return The y.
-     */
-    @java.lang.Override
-    public int getY() {
-      return y_;
-    }
-    /**
-     * <code>int32 y = 2;</code>
-     * @param value The y to set.
+     * <code>string text = 1;</code>
+     * @param value The bytes for text to set.
      * @return This builder for chaining.
      */
-    public Builder setY(int value) {
-
-      y_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 y = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearY() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      y_ = 0;
+    public Builder setTextBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      text_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:app.delivery.infrastructure.grpc.geo.Location)
+    // @@protoc_insertion_point(builder_scope:app.delivery.infrastructure.grpc.geo.gen.ErrorResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:app.delivery.infrastructure.grpc.geo.Location)
-  private static final app.delivery.infrastructure.grpc.geo.Location DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:app.delivery.infrastructure.grpc.geo.gen.ErrorResponse)
+  private static final app.delivery.infrastructure.grpc.geo.gen.ErrorResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new app.delivery.infrastructure.grpc.geo.Location();
+    DEFAULT_INSTANCE = new app.delivery.infrastructure.grpc.geo.gen.ErrorResponse();
   }
 
-  public static app.delivery.infrastructure.grpc.geo.Location getDefaultInstance() {
+  public static app.delivery.infrastructure.grpc.geo.gen.ErrorResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Location>
-      PARSER = new com.google.protobuf.AbstractParser<Location>() {
+  private static final com.google.protobuf.Parser<ErrorResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ErrorResponse>() {
     @java.lang.Override
-    public Location parsePartialFrom(
+    public ErrorResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -487,17 +483,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<Location> parser() {
+  public static com.google.protobuf.Parser<ErrorResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Location> getParserForType() {
+  public com.google.protobuf.Parser<ErrorResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public app.delivery.infrastructure.grpc.geo.Location getDefaultInstanceForType() {
+  public app.delivery.infrastructure.grpc.geo.gen.ErrorResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
