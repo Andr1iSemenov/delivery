@@ -1,6 +1,7 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package app.delivery.infrastructure.grpc.geo.gen;
+option csharp_namespace = "GeoApp.Api";
+option java_package = "app.delivery.infrastructure.grpc.geo.gen";
 
 // The Geo service definition.
 service Geo {
