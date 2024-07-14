@@ -129,6 +129,8 @@
 								<interfaceOnly>true</interfaceOnly>
 								<serviceImplementation>false</serviceImplementation>
 								<skipDefaultInterface>true</skipDefaultInterface>
+								<excludeGeneratedDate>true</excludeGeneratedDate>
+								<hideGenerationTimestamp>true</hideGenerationTimestamp>
 							</configOptions>
 							<supportingFilesToGenerate>
 								ApiUtil.java

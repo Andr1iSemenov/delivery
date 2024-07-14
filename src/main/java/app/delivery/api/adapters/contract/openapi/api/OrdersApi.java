@@ -33,13 +33,13 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-07T22:44:24.803568+03:00[Europe/Kiev]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
 @Validated
 @Tag(name = "Orders", description = "the Orders API")
 public interface OrdersApi {
 
     /**
-     * POST /api/v1/orders : Создать заказ
+     * POST /api/v1/orders/ : Создать заказ
      * Позволяет создать заказ с целью тестирования
      *
      * @return Успешный ответ (status code 201)

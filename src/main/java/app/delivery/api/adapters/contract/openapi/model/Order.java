@@ -20,7 +20,7 @@ import jakarta.annotation.Generated;
  * Order
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-07T22:44:24.803568+03:00[Europe/Kiev]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
 public class Order {
 
   private UUID id;
