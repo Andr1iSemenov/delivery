@@ -16,7 +16,7 @@
     <properties>
         <java.version>21</java.version>
         <protoc.version>4.27.1</protoc.version>
-        <grpc.version>1.64.0</grpc.version>
+        <grpc.version>1.65.1</grpc.version>
     </properties>
     <dependencies>
         <dependency>
@@ -191,12 +191,15 @@
                 <version>0.6.1</version>
                 <configuration>
                     <protocExecutable>/usr/local/bin/protoc</protocExecutable>
-                    <protocArtifact>com.google.protobuf:protoc:${protoc.version}:osx-x86_64</protocArtifact>
-                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:osx-x86_64</pluginArtifact>
+                    <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
                     <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
                     <protoSourceRoot>src/main/java/app/delivery/infrastructure/grpc</protoSourceRoot>
                     <outputDirectory>src/main/java</outputDirectory>
+                    <!--To avoid remove all from src/main/java-->
                     <clearOutputDirectory>false</clearOutputDirectory>
+                    <!--To avoid @Generated annotation from javax package instead of jakarta-->
+                    <pluginParameter>@generated=omit</pluginParameter>
                 </configuration>
                 <executions>
                     <execution>
@@ -207,6 +210,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
     <repositories>
