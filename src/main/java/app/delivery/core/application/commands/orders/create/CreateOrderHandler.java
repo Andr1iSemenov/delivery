@@ -15,14 +15,12 @@ import java.util.Random;
 public class CreateOrderHandler implements CommandHandler<CreateOrderCommand> {
 
     private final OrderRepository orderRepository;
-    private final Random random = new Random();
 
 
     @Transactional
     @Override
     public void handle(CreateOrderCommand command) {
         //todo user real location once get will be implemented
-        //todo move random location to Location method
-        orderRepository.save(Order.create(command.basketId(), new Location(random.nextInt(10) + 1, random.nextInt(10) + 1), command.weight()));
+        orderRepository.save(Order.create(command.basketId(), Location.createWithRandomCoordinates(), command.weight()));
     }
 }

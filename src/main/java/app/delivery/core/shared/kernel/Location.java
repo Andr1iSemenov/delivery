@@ -1,10 +1,13 @@
 package app.delivery.core.shared.kernel;
 
 import java.util.Objects;
+import java.util.Random;
 
 public record Location(int xCoordinate, int yCoordinate) {
 
+    private static final Random RANDOM = new Random();
     private static final int STEP_SIZE = 1;
+
     public static final int MINIMUM_COORDINATE = 1;
     public static final int MAXIMUM_COORDINATE = 10;
 
@@ -20,6 +23,10 @@ public record Location(int xCoordinate, int yCoordinate) {
 
     public static Location createWithMinimumCoordinates() {
         return new Location(MINIMUM_COORDINATE, MINIMUM_COORDINATE);
+    }
+
+    public static Location createWithRandomCoordinates() {
+        return new Location(RANDOM.nextInt(10) + 1, RANDOM.nextInt(10) + 1);
     }
 
     public int calculateDistance(Location toDistance) {
