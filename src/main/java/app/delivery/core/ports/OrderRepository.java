@@ -13,6 +13,8 @@ public interface OrderRepository {
 
     Order findById(UUID id);
 
+    Order findByCourierId(UUID courierId);
+
     List<Order> findNewOrders();
 
     List<Order> findAssignedOrders();
