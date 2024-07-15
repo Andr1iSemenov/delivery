@@ -30,7 +30,7 @@ public class OrderController implements OrdersApi {
 
     @Override
     public ResponseEntity<Void> createOrder() {
-        CreateOrderCommand createOrderCommand = new CreateOrderCommand(UUID.randomUUID(), "Несуществующая", new Weight(5));
+        CreateOrderCommand createOrderCommand = new CreateOrderCommand(UUID.randomUUID(), "Any", new Weight(1));
         createOrderHandler.handle(createOrderCommand);
 
         return ResponseEntity.ok().build();
