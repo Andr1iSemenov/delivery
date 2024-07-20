@@ -1,0 +1,7 @@
+src/main/java/app/delivery/api/adapters/contract/openapi/api/ApiUtil.java
+src/main/java/app/delivery/api/adapters/contract/openapi/api/CouriersApi.java
+src/main/java/app/delivery/api/adapters/contract/openapi/api/OrdersApi.java
+src/main/java/app/delivery/api/adapters/contract/openapi/model/Courier.java
+src/main/java/app/delivery/api/adapters/contract/openapi/model/Error.java
+src/main/java/app/delivery/api/adapters/contract/openapi/model/Location.java
+src/main/java/app/delivery/api/adapters/contract/openapi/model/Order.java
