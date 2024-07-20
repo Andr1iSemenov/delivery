@@ -194,7 +194,7 @@
                     <pluginId>grpc-java</pluginId>
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
                     <protoSourceRoot>src/main/java/app/delivery/infrastructure/grpc/proto</protoSourceRoot>
-                    <outputDirectory>src/main/java</outputDirectory>
+                    <outputDirectory>target/src/main/java</outputDirectory>
                     <!--To avoid remove all from src/main/java-->
                     <clearOutputDirectory>false</clearOutputDirectory>
                     <!--To avoid @Generated annotation from javax package instead of jakarta-->
@@ -209,31 +209,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- maven-resources-plugin to copy/move generated files -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.2.0</version>
-                <executions>
-                    <execution>
-                        <id>copy-protobuf-generated-sources</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>src/main/java/app/delivery/infrastructure/grpc/geo/gen</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>target/generated-sources/protobuf/java</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
         </plugins>
     </build>
     <repositories>
