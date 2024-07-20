@@ -38,6 +38,6 @@ public class OrderController implements OrdersApi {
 
     @Override
     public ResponseEntity<List<Order>> getOrders() {
-        return new ResponseEntity<>(getUncompletedOrdersQueryHandler.handle().stream().map(modelOrderConverter::convert).toList(), HttpStatus.OK);
+        return new ResponseEntity<>(modelOrderConverter.convert(getUncompletedOrdersQueryHandler.handle()), HttpStatus.OK);
     }
 }
