@@ -162,7 +162,6 @@
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/contract/openapi.yml</inputSpec>
                             <generatorName>spring</generatorName>
-                            <output>.</output>
                             <apiPackage>app.delivery.api.adapters.contract.openapi.api</apiPackage>
                             <modelPackage>app.delivery.api.adapters.contract.openapi.model</modelPackage>
                             <configOptions>
