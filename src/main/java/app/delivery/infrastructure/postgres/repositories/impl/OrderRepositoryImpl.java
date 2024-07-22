@@ -8,6 +8,7 @@ import app.delivery.infrastructure.postgres.entities.OrderEntity;
 import app.delivery.infrastructure.postgres.repositories.OrderJpaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,11 +20,14 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     private final OrderJpaRepository repository;
     private final OrderConverter orderConverter;
+    private final ApplicationEventPublisher eventPublisher;
 
 
     @Override
     public Order save(Order order) {
         OrderEntity savedOrder = repository.save(orderConverter.convertToEntity(order));
+        order.getDomainEvents().forEach(eventPublisher::publishEvent);
+        order.clearDomainEvents();
         return orderConverter.convertToDomain(savedOrder);
     }
 
