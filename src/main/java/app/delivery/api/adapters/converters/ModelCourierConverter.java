@@ -2,9 +2,9 @@ package app.delivery.api.adapters.converters;
 
 import app.delivery.api.adapters.contract.openapi.model.Location;
 import app.delivery.core.domain.courier.aggregate.Courier;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class ModelCourierConverter {
 
     public app.delivery.api.adapters.contract.openapi.model.Courier convert(Courier courier) {

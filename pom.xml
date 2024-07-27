@@ -86,6 +86,19 @@
             <version>${grpc.version}</version>
             <type>pom</type>
         </dependency>
+
+        <!--Kafka -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>3.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -188,24 +201,49 @@
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.6.1</version>
-                <configuration>
-                    <protocExecutable>/usr/local/bin/protoc</protocExecutable>
-                    <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
-                    <pluginId>grpc-java</pluginId>
-                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
-                    <protoSourceRoot>src/main/java/app/delivery/infrastructure/grpc/proto</protoSourceRoot>
-                    <outputDirectory>target/src/main/java</outputDirectory>
-                    <!--To avoid remove all from src/main/java-->
-                    <clearOutputDirectory>false</clearOutputDirectory>
-                    <!--To avoid @Generated annotation from javax package instead of jakarta-->
-                    <pluginParameter>@generated=omit</pluginParameter>
-                </configuration>
                 <executions>
                     <execution>
+                        <id>grpc</id>
                         <goals>
                             <goal>compile</goal>
                             <goal>compile-custom</goal>
                         </goals>
+                        <configuration>
+                            <protocExecutable>/usr/local/bin/protoc</protocExecutable>
+                            <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
+                            <pluginId>grpc-java</pluginId>
+                            <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
+                            <protoSourceRoot>src/main/java/app/delivery/infrastructure/grpc/proto</protoSourceRoot>
+                            <outputDirectory>target/generated-sources/protobuf/grpc</outputDirectory>
+                            <clearOutputDirectory>false</clearOutputDirectory>
+                            <pluginParameter>@generated=omit</pluginParameter>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>kafka-consumer-basket-confirmed</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <protocExecutable>/usr/local/bin/protoc</protocExecutable>
+                            <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
+                            <protoSourceRoot>src/main/java/app/delivery/infrastructure/kafka/proto</protoSourceRoot>
+                            <outputDirectory>target/generated-sources/protobuf/kafka/consumer</outputDirectory>
+                            <clearOutputDirectory>false</clearOutputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>kafka-producer-order-status-changed</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <protocExecutable>/usr/local/bin/protoc</protocExecutable>
+                            <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
+                            <protoSourceRoot>src/main/java/app/delivery/api/adapters/kafka/order_status_changed/proto</protoSourceRoot>
+                            <outputDirectory>target/generated-sources/protobuf/kafka/producer/order_status_changed</outputDirectory>
+                            <clearOutputDirectory>false</clearOutputDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
