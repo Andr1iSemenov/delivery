@@ -50,7 +50,7 @@ public class Order {
     public void assignCourier(@NonNull UUID courierId) {
         this.courierId = courierId;
         this.status = OrderStatus.ASSIGNED;
-        domainEvents.add(new OrderStatusChangedEvent(this, this.id, this.status));
+        domainEvents.add(new OrderStatusChangedEvent(this.id, this.status));
     }
 
     public void complete() {
@@ -58,7 +58,7 @@ public class Order {
             throw new IllegalStateException("Cannot complete order. Expected status should be ASSIGNED but was %s".formatted(this.status));
         }
         this.status = OrderStatus.COMPLETED;
-        domainEvents.add(new OrderStatusChangedEvent(this, this.id, this.status));
+        domainEvents.add(new OrderStatusChangedEvent(this.id, this.status));
     }
 
     public void clearDomainEvents() {

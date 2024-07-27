@@ -10,8 +10,8 @@ public class OrderStatusChangedEventConverter {
 
     public OrderStatusChangedIntegrationEvent convert(OrderStatusChangedEvent event) {
         return OrderStatusChangedIntegrationEvent.newBuilder()
-                .setOrderId(event.getOrderId().toString())
-                .setOrderStatus(OrderStatus.valueOf(event.getOrderStatus().getName()))
+                .setOrderId(event.orderId().toString())
+                .setOrderStatus(OrderStatus.valueOf(event.orderStatus().getName()))
                 .build();
     }
 }

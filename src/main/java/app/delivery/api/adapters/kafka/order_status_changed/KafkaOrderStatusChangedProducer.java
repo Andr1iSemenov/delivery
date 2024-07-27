@@ -26,10 +26,11 @@ public class KafkaOrderStatusChangedProducer {
 
     public void sendMessage(OrderStatusChangedEvent event) {
         try {
-            String jsonMessage = JsonFormat.printer().print(orderStatusChangedEventConverter.convert(event));
+            OrderStatusChangedIntegrationEvent convert = orderStatusChangedEventConverter.convert(event);
+            String jsonMessage = JsonFormat.printer().print(convert);
             producer.send(new ProducerRecord<>(topic, jsonMessage.getBytes(StandardCharsets.UTF_8)));
         } catch (Exception e) {
-            log.error("While send message for order id {} got", event.getOrderId(), e);
+            log.error("While send message for order id {} got", event.orderId(), e);
         }
     }
 }
