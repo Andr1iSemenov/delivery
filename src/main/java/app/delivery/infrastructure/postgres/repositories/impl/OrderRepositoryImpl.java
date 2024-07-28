@@ -5,10 +5,12 @@ import app.delivery.core.domain.order.aggregate.OrderStatus;
 import app.delivery.core.ports.OrderRepository;
 import app.delivery.infrastructure.postgres.converters.impl.OrderConverter;
 import app.delivery.infrastructure.postgres.entities.OrderEntity;
+import app.delivery.infrastructure.postgres.entities.OutboxMessage;
 import app.delivery.infrastructure.postgres.repositories.OrderJpaRepository;
+import app.delivery.infrastructure.postgres.repositories.OutboxMessageJpaRepository;
+import com.google.gson.Gson;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,13 +22,19 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     private final OrderJpaRepository repository;
     private final OrderConverter orderConverter;
-    private final ApplicationEventPublisher eventPublisher;
+    private final Gson gson;
+    private final OutboxMessageJpaRepository outboxMessageJpaRepository;
 
 
     @Override
     public Order save(Order order) {
         OrderEntity savedOrder = repository.save(orderConverter.convertToEntity(order));
-        order.getDomainEvents().forEach(eventPublisher::publishEvent);
+        outboxMessageJpaRepository.saveAll(order.getDomainEvents().stream().map(domainEvent -> {
+            OutboxMessage outboxMessage = new OutboxMessage();
+            outboxMessage.setType(domainEvent.getClass().getTypeName());
+            outboxMessage.setContent(gson.toJson(domainEvent));
+            return outboxMessage;
+        }).toList());
         order.clearDomainEvents();
         return orderConverter.convertToDomain(savedOrder);
     }
